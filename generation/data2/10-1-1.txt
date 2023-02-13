@@ -1,0 +1,78 @@
+ include  stdio h  
+void printCitiesTree  int indent  struct cityTN  s   
+void turnoverCities struct cityTN  s   
+ 
+struct cityTN  
+  
+    char   name 20   
+    int    population  
+    struct cityTN  left  
+    struct cityTN  right  
+   
+ 
+ 
+int main   
+  
+    struct cityTN c1      257829  NULL  NULL   
+                  c2        190391  NULL  NULL   
+                  c3       395706  NULL  NULL   
+                  c4       172311  NULL  NULL   
+                  c5       241991  NULL  NULL   
+                  c6       434110  NULL  NULL   
+     
+    struct cityTN  root   NULL  
+    root        c1   
+    c1 left     c2    
+    c1 right    c3   
+    c2 left     c4   
+    c2 right    c5   
+    c3 right    c6   
+   
+    printf     
+    printCitiesTree   root   
+     
+    printf     
+    turnoverCities root   
+    printCitiesTree   root    
+    printf     
+ 
+    return  
+  
+ 
+ 
+void printCitiesTree int indent  struct cityTN  ct  
+  
+    int i  
+     
+    if  ct    NULL  
+        printf    
+     
+    else 
+      
+        printf    
+        for  i    i   indent  i     
+            printf    
+         
+        printf   ct  name  ct  population   
+        printCitiesTree indent    ct  left   
+        printf    
+        printCitiesTree indent    ct  right   
+        printf    
+      
+  
+ 
+ 
+void turnoverCities struct cityTN  s  
+  
+    struct cityTN  tmp  
+     
+    if s  NULL  
+      
+        tmp        s  left  
+        s  left    s  right  
+        s  right   tmp  
+         
+        turnoverCities s  right   
+        turnoverCities s  left   
+      
+ 

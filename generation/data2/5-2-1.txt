@@ -1,0 +1,61 @@
+ include  stdio h  
+int copyN char  out int pos char  in int num   
+int maxip char  s   
+ 
+int main void  
+  
+    char  strs        
+    char outb 80       
+    int  p  i  n  
+         
+    for i i i    
+      
+        n   maxip strs i    
+        p   copyN outb p strs i  n   
+        printf  outb   
+      
+     
+    printf  outb   
+    return  
+  
+ 
+ 
+int copyN char  out int pos char  in int num  
+  
+    int i  n   pos  
+         
+    for i i num i    
+      
+        out n  in i   
+        n    
+      
+    out n    
+         
+    return pos   num  
+  
+ 
+ 
+int maxip char  s  
+  
+    int j  
+    int max_val    max_index  count    
+ 
+    for j s j    j    
+      
+        if   
+          
+            if max_val   s j   
+              
+                max_val     s j   
+                max_index   j  
+              
+             
+            count    
+          
+      
+ 
+    if count     
+        max_index    
+ 
+    return max_index  
+ 

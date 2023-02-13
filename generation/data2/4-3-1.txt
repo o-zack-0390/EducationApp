@@ -1,0 +1,53 @@
+ include  stdio h  
+ define N 
+ 
+int main void  
+  
+    int num_list 1000   
+    int count    
+    for int i    i    
+      
+        scanf   num_list i    
+        count    
+         
+        if num_list i      
+            break  
+      
+     
+    if count   N  
+        printf    
+     
+    int tmp  
+    for int i  i count  i    
+      
+        for int j i  j count  j    
+          
+            if num_list i    num_list j   
+              
+                tmp           num_list i   
+                num_list i    num_list j   
+                num_list j    tmp  
+              
+          
+      
+     
+    for int i  i count  i    
+        printf  num_list i    
+     
+    int target   num_list   
+    int pos       
+    for int i  i count  i    
+      
+        if num_list i     num_list i   
+          
+            target   num_list i   
+            pos    
+          
+         
+        if pos    N  
+            break  
+      
+     
+    printf  N target   
+    return  
+  

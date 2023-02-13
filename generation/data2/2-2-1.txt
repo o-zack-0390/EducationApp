@@ -1,0 +1,29 @@
+ include  stdio h  
+ 
+int kaijou int n  
+  
+    int r  
+    printf  n   
+     
+    if n   
+        r  
+     
+    else 
+      
+        r n kaijou n   
+      
+         
+    printf  n r   
+    return r  
+  
+ 
+ 
+int main void  
+  
+    int x k  
+    printf    
+    scanf   x   
+    k kaijou x    
+    printf  x k   
+    return  
+ 

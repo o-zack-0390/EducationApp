@@ -1,0 +1,78 @@
+ include  stdio h  
+ include  string h  
+ define  NLEN 14 
+ 
+struct town  
+  
+    int  area  
+    int  pop  
+    char name NLEN     
+   
+ 
+ 
+struct town newTown struct town s struct town t  
+  
+    struct town rt  
+ 
+    rt area   s area   t area  
+    rt pop    s pop    t pop  
+     
+    strcat s name t name   
+    strcpy rt name s name   
+ 
+    int moji   strlen rt name   
+     
+    if NLEN moji  
+      strcpy rt name    
+   
+    return rt  
+  
+ 
+ 
+double getDens struct town t  
+  
+    return  double t pop    double t area  
+  
+ 
+ 
+void printTown struct town t  
+  
+    printf  t area t pop  double t pop  double t area t name   
+  
+ 
+ 
+ define Lsize  sizeof list  sizeof struct town   
+int main void  
+  
+    int    t1  t2  i  
+    struct town rt   
+    struct town list       
+       33 22     
+       12 11      
+       17 90    
+       15 86     
+       18 60        
+       
+     
+    printf    
+    for  i    i   Lsize  i    
+      
+        printf  i   
+        printTown list i    
+      
+     
+    while  
+      
+        printf    
+        scanf   t2   
+         
+        if t1  t2  t1  Lsize  t2  Lsize  t1  t2  
+            break  
+         
+        rt   newTown list t1  list t2    
+        printf  strlen rt name    
+        printTown rt   
+      
+     
+    return  
+ 

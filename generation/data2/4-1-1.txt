@@ -1,0 +1,40 @@
+ include  stdio h  
+int main void  
+  
+    int i j tmp  
+    int data 12   
+    int total  
+     
+    printf    
+    scanf   total   
+     
+    if 12 total  
+      
+        printf    
+        total 12  
+      
+ 
+    printf  total   
+    for i i total   i  
+        scanf   data i    
+ 
+    for i i total   i  
+      
+        for j i j total   j  
+          
+            if data j  data i   
+              
+                tmp data i   
+                data i  data j   
+                data j  tmp  
+             
+          
+      
+ 
+    printf    
+    for i i total   i  
+        printf  data i    
+    printf    
+     
+    return  
+ 

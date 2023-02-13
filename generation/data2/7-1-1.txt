@@ -1,0 +1,32 @@
+ include  stdio h  
+ define MAX 15 
+ 
+int bin_coef int n  int p  
+  
+    if p n  
+        return  
+         
+    else if n   
+        return  
+         
+    else if p   
+        return bin_coef n p   
+         
+    else 
+        return bin_coef n p  bin_coef n p   
+  
+ 
+ 
+int main void  
+  
+    int n p  
+     
+    for n  n  MAX  n    
+      
+        for p p  n p    
+            printf  bin_coef n p    
+        printf    
+      
+     
+    return  
+ 

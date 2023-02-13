@@ -1,0 +1,116 @@
+ include  stdio h  
+ include  stdlib h  
+ 
+struct node 
+  
+    int    val  
+    struct node  next  
+   
+typedef struct node  LIST  
+ 
+ 
+int lenL LIST x  
+  
+    if x    NULL  
+        return  
+     
+    return   lenL x  next   
+  
+ 
+ 
+LIST cutL LIST x  int p  
+  
+    LIST t    LIST  malloc sizeof struct node    
+ 
+    if x    NULL  
+        return NULL  
+ 
+    else if p     
+      
+        t         x  next  
+        x  next   NULL  
+        return t  
+      
+ 
+    else 
+      
+        t   x  next  
+        cutL t p   
+      
+  
+ 
+ 
+void showL char  m  LIST x  
+  
+    printf   m   
+    while  x    NULL  
+      
+        printf   x  val   
+        x   x  next  
+      
+    printf    
+  
+ 
+ 
+LIST mergeL LIST x  LIST y  
+  
+    LIST hozon1    LIST  malloc sizeof struct node    
+    LIST hozon2    LIST  malloc sizeof struct node    
+     
+    if x  NULL  
+        return y  
+     
+    else if y  NULL  
+        return x  
+     
+    else 
+      
+        hozon1    x  next  
+        hozon2    y  next  
+        x  next   y  
+        y  next   hozon1  
+        mergeL hozon1 hozon2   
+        return x  
+      
+  
+ 
+ 
+LIST addL LIST x  int v  
+  
+    LIST t    LIST  malloc sizeof struct node    
+     
+    if  t    NULL  
+      
+        printf    
+        exit    
+      
+     
+    t  val    v  
+    t  next   x  
+     
+    return t  
+  
+ 
+ 
+int main void  
+  
+    int  i  len  
+    LIST part1   NULL  
+    LIST part2  
+    LIST mix  
+     
+    printf    
+    scanf     len   
+     
+    for i   len  i     i    
+        part1   addL part1  i   
+     
+    part2   cutL part1  lenL part1      
+    showL   part1   
+    showL   part2   
+     
+    mix   mergeL part2  part1   
+    showL   mix   
+     
+    return  
+ 

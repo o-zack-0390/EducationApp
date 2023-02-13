@@ -1,0 +1,80 @@
+ include  stdio h  
+ include  stdlib h  
+ 
+void printarray int heap    int size   
+void swapvalue int heap    int i  int j   
+void upvalue int heap    int i   
+void downvalue int heap    int i  int size   
+ 
+ 
+int main void  
+  
+    int data       98  87  36  35  54  11  33   79   size   10  
+    int  heap  i  
+     
+    heap    int    malloc sizeof int  size   
+    for i    i   size  i    
+      
+        heap i    data i   
+        upvalue heap  i   
+      
+         
+    printarray heap  size   
+    heap    heap   size   
+    downvalue heap   size   
+    printarray heap  size   
+     
+    return  
+  
+ 
+ 
+void printarray int heap    int size  
+  
+    for  int i    i   size  i    
+        printf   heap i   i    size    \n :       
+  
+ 
+ 
+void swapvalue int heap    int i  int j  
+  
+    int tmp   heap i   
+    heap i    heap j   
+    heap j    tmp  
+  
+ 
+ 
+void upvalue int heap    int i  
+  
+    int j   i  
+     
+    if i   
+        while  
+          
+            if    i         
+                break  
+             
+            if heap i   heap  i    
+                swapvalue heap i  i    
+                i    
+          
+         
+        i   j  
+         
+        if i     
+            while  
+              
+                if    i         
+                    break  
+                 
+                if heap i   heap  i    
+                    swapvalue heap i  i    
+                    i    
+              
+  
+ 
+ 
+void downvalue int heap    int i  int size  
+  
+    for  i size i    
+        upvalue heap i   
+ 

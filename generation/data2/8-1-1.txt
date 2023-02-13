@@ -1,0 +1,20 @@
+ include  stdio h  
+ include  stdlib h  
+ 
+int main void  
+  
+    char buf 1000   
+    FILE  fp  
+    int  a   
+     
+    sprintf buf    
+     
+    if  fp fopen buf     NULL  
+        exit   
+ 
+    while fscanf fp   a   a   a   a   a      EOF  
+        printf  a  a  a  a  a    
+   
+    fclose fp   
+    return  
+ 

@@ -1,0 +1,47 @@
+ include  stdio h  
+ define MAXLINE 1001 
+ 
+int main int argc  char  argv    
+  
+    int  i  j  
+    int  f  
+    char line MAXLINE   
+    FILE  file  
+     
+    if  argc     
+      
+        fprintf stderr     
+        return  
+      
+       
+    if   file   fopen argv         NULL  
+      
+        fprintf stderr    argv    
+        return  
+      
+     
+    while fgets line  MAXLINE  file     NULL  
+      
+        for i    line i       i    
+          
+            f    
+            for j    argv  j       j    
+              
+                if line i   j     argv  j   
+                  
+                    f    
+                    break  
+                  
+              
+             
+            if f     
+                break  
+          
+         
+        if f     
+            printf   line   
+      
+     
+    fclose file   
+    return  
+ 

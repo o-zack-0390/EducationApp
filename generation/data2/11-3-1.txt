@@ -1,0 +1,125 @@
+ include  stdio h  
+ include  stdlib h  
+ include  string h  
+ 
+void mbtree NODE  pp  char  data   
+int  btsearch  NODE  p  char  data   
+ 
+typedef struct _nd 
+  
+    char   data 20   
+    struct _nd  left  
+    struct _nd  right  
+ NODE  
+ 
+ 
+int main void  
+  
+    char data  20        
+    int  i  
+     
+    for  i    i    i    
+        printf   data i      
+    printf    
+         
+    NODE  root   top  
+    root    NODE    malloc sizeof NODE    
+         
+    if root    NULL  
+      
+        printf    
+        exit    
+      
+         
+    strcpy root  data  data    
+    root  left    NULL  
+    root  right   NULL  
+    top           root  
+    printf   root  data   
+         
+    for  i    i    i    
+        mbtree top  data i    
+     
+    btsearch top     
+    btsearch top     
+    btsearch top     
+    btsearch top     
+     
+    return  
+  
+ 
+ 
+void mbtree NODE  p1  char  data  
+  
+    NODE  p2  
+ 
+    p2    NODE    malloc sizeof NODE    
+    strcpy p2  data  data   
+    p2  left    NULL  
+    p2  right   NULL  
+     
+    if  p2    NULL  
+      
+        perror    
+        exit    
+      
+ 
+    if strcmp p2  data p1  data     
+      
+        if  p1  right    NULL  
+          
+            p1  right p2  
+            printf   p1  data  data   
+           
+         
+        else 
+            mbtree p1  right  data   
+      
+         
+    else 
+      
+        if p1  left  NULL  
+          
+            p1  left p2  
+            printf   p1  data  data   
+          
+         
+        else 
+            mbtree p1  left data   
+      
+  
+ 
+ 
+int btsearch NODE  p  char  data  
+  
+    int chk  
+    int chknum    
+ 
+    printf   data   
+    while  p    NULL  
+      
+        chk   strcmp data  p  data   
+        chknum    
+                 
+        if  chk     
+          
+            printf  data chknum   
+            return     
+          
+         
+        else if  chk    
+          
+            p   p  left  
+            printf    
+          
+         
+        else 
+          
+            p   p  right  
+            printf    
+          
+      
+     
+    printf   data chknum   
+    return     
+ 

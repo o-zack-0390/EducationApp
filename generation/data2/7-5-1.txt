@@ -1,0 +1,56 @@
+ include  stdio h  
+void calculate int  data  int size  int  min  int  max  double  avg   
+ 
+int main void  
+  
+    int data       98  87  36  35  54  11  33   79   size   10  
+    int min  max  
+    double avg  
+         
+    calculate data size  min  max  avg   
+    printf   min  max  avg size   
+     
+    return  
+  
+ 
+ 
+void calculate int  data  int size  int  min  int  max  double  avg  
+  
+    int i  
+    int min2  
+   
+    min2   data   
+     min    
+   
+    for i i size i    
+      
+        if min2 data i   
+          
+            min2   data i   
+             min   min2  
+          
+      
+ 
+    int j  
+    int max2  
+   
+    max2   data   
+     max    
+   
+    for j j size j    
+      
+        if max2 data j   
+          
+            max2   data j   
+             max   max2  
+          
+      
+ 
+ 
+    int arv2  
+    for i i size i    
+      
+        arv2   arv2   data i   
+         avg   arv2  
+      
+ 

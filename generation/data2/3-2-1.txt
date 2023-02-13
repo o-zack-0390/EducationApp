@@ -1,0 +1,41 @@
+ include  stdio h  
+ include  stdlib h  
+int calculate int query  int data    int size   
+ 
+int main void  
+  
+    int data      98 87 36 35 54 11 33 79  
+    int size     10  
+    int query  min  
+     
+    while  
+      
+        printf    
+        scanf   query   
+         
+        if query  
+            break  
+         
+        min calculate query data size   
+        printf  query min   
+      
+     
+    return  
+  
+ 
+ 
+int calculate int query  int data    int size  
+  
+    int i  mainasu  minimum  
+    minimum   abs query data    
+     
+    for i  i size  i    
+      
+        mainasu   abs query data i    
+         
+        if mainasu   minimum  
+            minimum   mainasu  
+      
+     
+    return minimum  
+ 

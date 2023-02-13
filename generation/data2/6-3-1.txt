@@ -1,0 +1,47 @@
+ include  stdio h  
+void minmax int  data  int size  int  min  int  max   
+ 
+int main void  
+  
+    int data      16 14 15      
+    int size     10  
+    int min  
+    int max  
+ 
+ 
+    minmax data size  min  max   
+    printf  min   
+    printf  max   
+ 
+    return  
+  
+ 
+ 
+void minmax int  data  int size  int  min  int  max  
+  
+    int i  
+    int min2  
+    
+    min2   data   
+    for i i size i    
+      
+        if data i  min2  
+          
+            min2   data i   
+             min   i  
+          
+      
+ 
+    int j  
+    int max2  
+         
+    max2 data   
+    for j j size j    
+      
+        if max2 data j   
+          
+            max2   data j   
+             max   j  
+          
+      
+ 

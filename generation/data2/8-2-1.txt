@@ -1,0 +1,45 @@
+ include  stdio h  
+int main void  
+  
+    FILE  fp  
+    FILE  fp2  
+    char s 256   
+    char c  
+     
+    if   fp   fopen       NULL  
+      
+        printf    
+        return  
+      
+     
+    if  fp2   fopen       NULL  
+      
+        printf    
+        return  
+      
+                 
+    printf    
+    printf    
+                 
+    while  fgets s  256  fp     NULL  
+        printf   s   
+                 
+    printf    
+    fseek fp   SEEK_SET   
+ 
+    printf    
+     
+    while fscanf  fp    s     EOF  
+        printf    s   
+  
+    printf    
+    fseek fp   SEEK_SET   
+ 
+    printf    
+    printf    
+    while  c   fgetc fp      EOF  
+        fputc c  fp2   
+         
+    fclose fp   
+    fclose fp2   
+ 

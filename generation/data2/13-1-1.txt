@@ -1,0 +1,101 @@
+ include  stdio h  
+void printCitiesTree int indent  struct cityTN  s   
+struct cityTN  addCity struct cityTN  ct  char  str  int num   
+ 
+struct cityTN 
+  
+    char   name 20   
+    int    population  
+    struct cityTN  left  
+    struct cityTN  right  
+   
+ 
+ 
+int main   
+  
+    struct cityTN c1      257829  NULL  NULL   
+                  c2        190391  NULL  NULL   
+                  c3       395706  NULL  NULL   
+                  c4       172311  NULL  NULL   
+                  c5       241991  NULL  NULL   
+                  c6       434110  NULL  NULL   
+                   
+    struct cityTN  root   NULL  
+    root        c1   
+    c1 left     c2    
+    c1 right    c3   
+    c2 left     c4   
+    c2 right    c5   
+    c3 right    c6  
+   
+    char str 20   
+    int num  
+    printf    
+    scanf    str   num   
+   
+    root   addCity root  str  num   
+    printCitiesTree  root   
+    printf    
+   
+    printf    
+    scanf    str   num   
+   
+    root   addCity root  str  num   
+    printCitiesTree  root   
+    printf    
+   
+    return  
+  
+ 
+ 
+void printCitiesTree int indent  struct cityTN  ct  
+  
+    int i  
+     
+    if  ct    NULL   
+        printf    
+     
+    else  
+      
+        printf    
+         
+        for i    i   indent  i     
+            printf    
+         
+        printf   ct  name  ct  population   
+        printCitiesTree indent    ct  left   
+        printf    
+        printCitiesTree indent    ct  right   
+        printf    
+      
+  
+ 
+ 
+struct cityTN  addCity struct cityTN  ct  char  str  int num  
+  
+    struct cityTN  bt NULL  
+    bt    struct cityTN   malloc sizeof struct cityTN    
+    strcpy bt  name str   
+     
+    bt  population   num  
+    bt  left         NULL  
+    bt  right        NULL  
+         
+    if ct  population num  
+      
+        if ct  right  NULL  
+            ct  right bt  
+         
+        addCity ct  right str num   
+      
+     
+    else if ct  population num  
+      
+        if ct  left  NULL  
+            ct  left bt  
+         
+        addCity ct  left str num   
+      
+         
+    return ct  
+ 

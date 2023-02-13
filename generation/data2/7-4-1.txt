@@ -1,0 +1,47 @@
+ include  string h  
+ define LEN 10 
+ 
+int main   
+  
+    char sentence       
+    char query LEN   
+    char result LEN   
+    int  length  
+    int  stop  
+    int  i  j  
+     
+    printf    
+    scanf    query   
+     
+    length   strlen query   
+    stop      
+     
+    for i  stop     i    
+      
+        for j  j length  j    
+          
+            if sentence i j       
+              
+                stop    
+                break  
+              
+             
+            else 
+              
+                if  query j           query j     sentence i j    
+                    break  
+                           
+                else 
+                    result j    sentence i j   
+              
+          
+           
+        if  j    length  
+          
+            result j      
+            printf   i  result   
+          
+      
+     
+    return  
+ 

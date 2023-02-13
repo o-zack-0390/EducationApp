@@ -1,0 +1,52 @@
+ include  stdio h  
+void printStrings char   p int n   
+void swapStrings char   p int i int j   
+ 
+int main void  
+  
+    char  p 100   
+    char Orange       
+    int  i j  
+     
+    p    Orange   
+    p    Apple   
+    p    Peach   
+    p    Grape   
+    p    Melon  
+    printStrings p   
+     
+    while  
+      
+        printf    
+        scanf    i  j   
+         
+        if i    i    j    j   
+            break  
+                 
+        swapStrings p i j   
+        printStrings p   
+      
+     
+    return  
+  
+ 
+ 
+void printStrings char   p int n  
+  
+    int i  
+         
+    printf    
+    for i i n i    
+        printf  i  p i  p i  p i    
+    printf    
+  
+ 
+ 
+void swapStrings char   p int i int j  
+  
+    int   k  
+    char  tmp  
+    tmp    p i   
+    p i    p j   
+    p j    tmp  
+ 

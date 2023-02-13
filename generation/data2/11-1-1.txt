@@ -1,0 +1,93 @@
+ include  stdio h  
+ include  stdlib h  
+ define  MAX 100 
+ 
+struct listNode  addNode struct listNode  node  int num   
+int    sumListNum struct listNode  node   
+int    countListOdd struct listNode  node   
+ 
+struct listNode 
+  
+    int    n  
+    struct listNode  next  
+   
+ 
+ 
+int main void  
+  
+    int    data MAX   
+    struct listNode  head  
+    int    i    
+    int    sum  odd  
+     
+    head   NULL  
+     
+    while   
+      
+        printf    
+        scanf    data i    
+         
+        if data i      
+            break  
+     
+        else 
+            head   addNode head  data i      
+      
+     
+    printf   sum   sumListNum head    
+    printf   odd   countListOdd head    
+     
+    return  
+  
+ 
+ 
+struct listNode  addNode struct listNode  node  int num  
+  
+    struct listNode  newnode   head  
+ 
+    head         node  
+    newnode       struct listNode   malloc sizeof struct listNode    
+    newnode  n   num  
+ 
+    if node    NULL  
+      
+        newnode  next   NULL  
+        head            newnode  
+      
+   
+    else 
+      
+        newnode  next   head  
+        head            newnode  
+      
+   
+    return head  
+  
+ 
+ 
+int sumListNum struct listNode  node  
+  
+    if node  NULL  
+        return  
+     
+    else 
+        return sumListNum node  next   node  n   
+  
+ 
+ 
+int countListOdd struct listNode  node  
+  
+    if node  NULL  
+        return  
+     
+    else 
+      
+        if  node  n    
+            node  n  
+         
+        else if  node  n    
+            node  n  
+         
+        return countListOdd node  next   node  n   
+      
+ 

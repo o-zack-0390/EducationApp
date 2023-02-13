@@ -1,0 +1,53 @@
+ include  stdio h  
+ define NLEN 14 
+ define Lsize  sizeof list  sizeof struct town   
+ 
+struct town 
+  
+    int  area  
+    int  pop   
+    char name NLEN    
+   
+ 
+ 
+double getDens struct town t  
+  
+    double x  
+    x    double t pop    double t area  
+    return x  
+  
+ 
+ 
+void printTown struct town t  
+  
+    printf  t area t pop  double t pop  double t area t name   
+  
+ 
+ 
+int main void  
+  
+    struct town list       
+       33 22     
+       12 11      
+       17 90    
+       15 86     
+       18 60        
+       
+    int i j  
+    double max  
+    double maxtown    
+     
+    for i i Lsize i    
+      
+        max   getDens list i    
+         
+        if maxtown max  
+          
+            maxtown   max  
+            j         i  
+          
+      
+ 
+    printTown list j    
+    return  
+ 

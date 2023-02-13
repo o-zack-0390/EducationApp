@@ -1,0 +1,43 @@
+ include  stdio h  
+ 
+void moveone int size char dep char tmp   
+void towerH int num char dep char arv char tmp   
+int  step  
+ 
+ 
+int main void  
+  
+    int n  
+    printf    
+    scanf   n   
+    towerH n    
+    return  
+  
+ 
+ 
+void moveone int size char dep char arv  
+  
+    printf  step   size dep arv   
+  
+ 
+ 
+void towerH int num char dep char arv char tmp  
+  
+    printf    
+     
+    if num   
+      
+        printf    
+        moveone dep arv   
+      
+     
+    else 
+      
+        printf    
+        towerH num dep tmp arv   
+        printf    
+        moveone num dep arv   
+        printf    
+        towerH num tmp arv dep   
+      
+ 

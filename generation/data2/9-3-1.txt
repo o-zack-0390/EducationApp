@@ -1,0 +1,76 @@
+ include stdio h  
+ include stdlib h  
+ include math h  
+ 
+struct rectangle inputr void   
+double area struct rectangle r   
+double lengthd struct rectangle r   
+int    issquare struct rectangle r   
+ 
+struct point 
+  
+    double x  
+    double y  
+   
+ 
+struct rectangle 
+  
+    struct point ll  
+    struct point ur  
+   
+ 
+ 
+int main void  
+  
+    struct rectangle a  
+    printf    
+    a   inputr    
+    printf   area a    
+    printf   lengthd a    
+    printf    
+     
+    if   issquare a    
+        printf    
+     
+    printf    
+    return  
+  
+ 
+ 
+struct rectangle inputr void  
+  
+    struct rectangle r  
+     
+    printf    
+    scanf     r ll x   r ll y   
+    printf    
+    scanf     r ur x   r ur y   
+ 
+    if   r ll x    r ur x      r ll y    r ur y    
+      
+      fprintf stderr     
+      exit   
+      
+   
+    return r  
+  
+ 
+ 
+double area struct rectangle r  
+  
+    return  r ur x   r ll x     r ur y   r ll y   
+  
+ 
+ 
+double lengthd struct rectangle r  
+  
+    double vertical     r ur x   r ll x     r ur x   r ll x    
+    double side         r ur y   r ll y     r ur y   r ll y    
+    return sqrt vertical   side   
+  
+ 
+ 
+int issquare struct rectangle r  
+  
+    return r ur x r ll x    r ur y r ll y  
+  

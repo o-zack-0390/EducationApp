@@ -1,0 +1,63 @@
+ include  stdio h  
+ 
+int fn_roop int a int b int c int n   
+int fn_recursion int a int b int c int n   
+ 
+ 
+int main void  
+  
+    int a b c n  
+     
+    printf    
+    scanf   a   
+    printf    
+    scanf   b   
+    printf    
+    scanf   c   
+    printf    
+    scanf   n   
+     
+    printf    
+    int i  
+     
+    for i i  n i    
+        printf  i fn_roop a b c i    
+     
+    printf    
+     
+    for i i  n i    
+        printf  i fn_recursion a b c i    
+     
+    return  
+  
+ 
+ 
+int fn_roop int a int b int c int n  
+  
+    int f c  
+         
+    if n   
+        return c  
+ 
+    else 
+      
+        for int i i  n i    
+            f a  b f   
+        return f  
+      
+  
+ 
+ 
+int fn_recursion int a int b int c int n  
+  
+    int f2 c  
+         
+    if n   
+        return c  
+ 
+    else 
+      
+        f2 a  b f2   
+        fn_recursion a b f2 n   
+      
+ 
