@@ -147,6 +147,9 @@ def check_student_num():
 	size1      = len(file1_list)
 	size2      = len(file2_list)
 
+	st.write(file1_list)
+	st.write(file2_list)
+
 	if size1 != size2:
 		st.write("エラー student_c.zip と student_txt.zip 内のファイル数が一致しません")
 		exit()
