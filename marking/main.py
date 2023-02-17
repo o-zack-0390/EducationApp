@@ -785,10 +785,6 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 
 			print("write : {}".format(path))
 
-
-#		採点結果ファイルを作成
-		generate_txt()
-
 #		別解の可能性があるファイルを表示する
 		print_possibility(another_list)
 
