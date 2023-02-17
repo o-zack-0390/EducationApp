@@ -762,7 +762,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 			eq = read_leaner(c_list[i], len_list, miss_list, correct_list, order, path1)
 			
 #			実行しているファイル名を表示
-			path = path4 + '/' + result_list[i].replace(".c", ".txt")
+			path = path4 + '/' + c_list[i].replace(".c", ".txt")
 			f    = open(path, 'w', encoding="utf-8", newline='')
 			f.write(c_list[i])
 			f.close()
