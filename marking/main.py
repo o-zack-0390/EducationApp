@@ -124,6 +124,9 @@ def check_student_num():
 
 	for i in range(size1):
 
+		print(file1_list)
+		print(file2_list)
+		
 		if file1_list[i].replace(".c", '') != file2_list[i].replace(".txt", ''):
 			st.write("student.c と student.txt のファイル名が一致しない組があります")
 			exit()
