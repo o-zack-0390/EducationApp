@@ -687,7 +687,7 @@ def print_file():
 		l_size = len(f_list[i])
 
 		for j in range(l_size):
-			f.write(f_list[index][j])
+			st.write(f_list[index][j])
 
 		index += 1
 		f.close()
