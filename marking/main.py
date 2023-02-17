@@ -64,7 +64,7 @@ def decode_ans_txt():
 		st.write("エラー ans.txt以外のファイルがアップロードされています")
 		exit()
 
-	f = open("/app/educationapp/marking/input/txt_file/ans.txt", 'w', encoding="utf-8", newline='')
+	f = open("/app/educationapp/marking/ans.txt", 'w', encoding="utf-8", newline='')
 	f.write(upload_file2.getvalue().decode('utf-8'))
 	f.close()
 
