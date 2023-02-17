@@ -630,7 +630,7 @@ def print_possibility(file_list):
 	size2 = len(error_list)
 
 	path1 = "/app/educationapp/marking/input/c_file/"
-	path2 = "/app/educationapp/marking/output/txt_file/"
+	path2 = "/app/educationapp/marking/output/"
 	
 	if size1 == 0:
 		return
