@@ -821,7 +821,6 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 
 			print("write : {}".format(path))
 
-		print_file()
 #		別解の可能性があるファイルを表示する
 		print_possibility(another_list)
 
@@ -834,6 +833,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 #		学習者の点数を計算する
 		cal_score(path4)
 
+		print_file()
 #		採点ファイルをzipファイルに圧縮
 		create_zip()
 
