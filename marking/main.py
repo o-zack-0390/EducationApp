@@ -653,6 +653,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 	if st.button("採点を開始"):
 
 #		エラーチェック
+		create_dir()
 		decode_ans_c()
 		decode_ans_txt()
 		decode_prob_c()
