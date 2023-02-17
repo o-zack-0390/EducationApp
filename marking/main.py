@@ -98,7 +98,6 @@ def decode_student_c():
 	out2        = re.compile(r'.c')
 
 	for f_name in file1_list:
-		st.write(f_name)
 		
 		if out2.search(f_name) == None:
 			st.write("エラー zipファイル中のファイルで検出。拡張子が「.c」ではないファイルがアップロードされています(student_c.zipファイル内のファイル拡張子を「.c」に変更してください)")
@@ -126,7 +125,6 @@ def decode_student_txt():
 	out2       = re.compile(r'.txt')
 
 	for f_name in file2_list:
-		st.write(f_name)
 
 		if out2.search(f_name) == None:
 			st.write("エラー 拡張子が「.txt」ではないファイルがアップロードされています(student_txt.zipファイル内のファイル拡張子を「.txt」に変更してください)")
@@ -683,13 +681,14 @@ def print_file():
 	f_size = len(f_list)
 	for i in range(f_size):
 
-		f      = open(path1 + '/' + f_list[i][0].replace(' ', ''), 'w', encoding = "utf-8", newline='')
+		path2  = path1 + '/' + f_list[i][0].replace(' ', '')
+		f      = open(path2, 'w', encoding = "utf-8", newline='')
 		l_size = len(f_list[i])
 
+		st.write(path2)
 		for j in range(l_size):
-			st.write(f_list[index][j])
+			st.write(f_list[i][j])
 
-		index += 1
 		f.close()
 
 
