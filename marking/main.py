@@ -638,7 +638,7 @@ def print_error(error_list):
 # zipファイルを作成
 def create_zip():
 
-	shutil.make_archive('student', format = 'zip', root_dir = './output')
+	shutil.make_archive('student', format = 'zip', root_dir = '/app/educationapp/marking/output')
 
 	with open("student.zip", "rb") as fp:
 		btn = st.download_button(
