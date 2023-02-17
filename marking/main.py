@@ -677,7 +677,7 @@ def change_file():
        tmp_path = path + '/' + str(i) + ".txt"
        f        = open(tmp_path, 'r', encoding = "utf-8", newline = '')
 
-       os.rename(tmp_path, path + '/' + f.readline().replace(".c", ".txt"))
+       os.rename(tmp_path, path + '/' + f.readline().replace(' ','').replace(".c", ".txt"))
        
        
     st.write(path + '/' + f.readline())
@@ -825,7 +825,6 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 #		学習者の点数を計算する
 		cal_score(path4)
 
-		change_file()
 #		採点ファイルをzipファイルに圧縮
 		create_zip()
 
