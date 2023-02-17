@@ -628,6 +628,9 @@ def print_possibility(file_list):
 
 	size1 = len(file_list)
 	size2 = len(error_list)
+
+	path1 = "/app/educationapp/marking/input/c_file/"
+	path2 = "/app/educationapp/marking/output/txt_file/"
 	
 	if size1 == 0:
 		return
@@ -639,7 +642,7 @@ def print_possibility(file_list):
 				for j in range(size2):
 
 					if file_list[i].replace('.txt', '.c') != error_list[j]:
-						f = open(file_list[i].replace("c_file", "txt_file").replace(".c", ".txt"), 'r', encoding = "utf-8", newline = '')
+						f = open(file_list[i].replace(path1, path2).replace(".c", ".txt"), 'r', encoding = "utf-8", newline = '')
 						st.write(f.readline())
 						f.close()
 
