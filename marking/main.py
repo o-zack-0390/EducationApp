@@ -644,6 +644,9 @@ def generate_txt():
 
 	index = 0
 
+	st.write(another_list)
+	st.write(fp_list)
+
 	for f_name in fp_list:
 
 		tmp_name = str(index) + ".txt"
