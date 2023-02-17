@@ -24,17 +24,22 @@ def create_dir():
 	txt_file = "/app/educationapp/marking/input/txt_file"
 	output   = "/app/educationapp/marking/output"
 
-	if os.path.exists(input) == False:
-		os.mkdir(input)
+	if os.path.exists(input):
+		shutil.rmtree(input)
 
-	if os.path.exists(c_file) == False:
-		os.mkdir(c_file)
+	if os.path.exists(c_file):
+		shutil.rmtree(c_file)
 
-	if os.path.exists(txt_file) == False:
-		os.mkdir(txt_file)
+	if os.path.exists(txt_file):
+		shutil.rmtree(txt_file)
 
-	if os.path.exists(output) == False:
-		os.mkdir(output)
+	if os.path.exists(output):
+		shutil.rmtree(output)
+
+	os.mkdir(input)
+	os.mkdir(c_file)
+	os.mkdir(txt_file)
+	os.mkdir(output)
 
 
 
