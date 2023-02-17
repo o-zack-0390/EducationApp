@@ -678,10 +678,11 @@ def change_file():
        f        = open(tmp_path, 'r', encoding = "utf-8", newline = '')
 
        os.rename(tmp_path, path + '/' + f.readline())
-       f.close()
+       
        
     st.write(path + '/' + f.readline())
     st.write(os.listdir(path))
+    f.close()
 
 
 
