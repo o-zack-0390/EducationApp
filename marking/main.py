@@ -658,31 +658,28 @@ def print_error(error_list):
 
 
 
-def change_file():
-    
-    path  = "/app/educationapp/marking/output"
-    files = os.listdir(path)
-    files = [f for f in files if os.path.isfile(os.path.join(path, f))]
-    index = -1
+def print_file():
 
-    for f_name in files:
+	path1 = '/app/educationapp/marking/output'
+	files = os.listdir(path1)
+	f_list = []
+	l_list = []
 
-      index   += 1
-      tmp_path = path + '/' + str(index) + ".txt"
+	for f_name in files:
+		
+		f    = open(path + '/' + f_name, 'r', encoding = "utf-8", newline='')
+		line = f.readline()
 
-      os.rename(path + '/' + f_name, tmp_path)
+		while line:
+			l_list.append(line)
+			line = f.readline()
 
-    for i in range(index+1):
-       
-       tmp_path = path + '/' + str(i) + ".txt"
-       f        = open(tmp_path, 'r', encoding = "utf-8", newline = '')
+		f.close()
 
-       os.rename(tmp_path, path + '/' + f.readline().replace(' ','').replace(".c", ".txt"))
-       
-       
-    st.write(path + '/' + f.readline())
-    st.write(os.listdir(path))
-    f.close()
+		f_list.append(l_list)
+		l_list.clear()
+
+	st.write(f_list)
 
 
 
@@ -819,7 +816,6 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 #		制約違反3に該当するファイルを表示する
 		print_error(error_list)
 
-		change_file()
 #		各空欄の配点と総合点数を定義する
 		def_score(path3, c_size)
 
