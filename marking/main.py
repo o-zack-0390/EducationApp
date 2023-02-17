@@ -810,6 +810,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 
 			print("write : {}".format(path))
 
+		print_file()
 #		別解の可能性があるファイルを表示する
 		print_possibility(another_list)
 
