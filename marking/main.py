@@ -654,7 +654,9 @@ def print_error(error_list):
 	else:
 		with st.expander("制約違反のファイル一覧"):
 			for i in range(size):
-				st.write(error_list[i])
+				f = open(path1 + '/' + error_list[i].replace(".txt", ".c"), 'r', encoding = "utf-8", newline = '')
+				st.write(f.readline())
+				f.close()
 
 
 
@@ -762,7 +764,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 			eq = read_leaner(c_list[i], len_list, miss_list, correct_list, order, path1)
 			
 #			実行しているファイル名を表示
-			path = path4 + '/' + c_list[i].replace(".c", ".txt")
+			path = path4 + '/' + result_list[i]
 			f    = open(path, 'w', encoding="utf-8", newline='')
 			f.write(c_list[i])
 			f.close()
