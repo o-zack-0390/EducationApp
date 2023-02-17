@@ -43,7 +43,7 @@ def decode_ans_c():
 	global upload_file1
 
 	if upload_file1.name != "ans.c":
-		st.write("エラー : ans.c以外のファイルがアップロードされています")
+		st.write("エラー ans.c以外のファイルがアップロードされています")
 		exit()
 
 	f = open("/app/educationapp/marking/ans.c", 'w', encoding="utf-8", newline='')
@@ -56,7 +56,7 @@ def decode_ans_txt():
 	global upload_file2
 
 	if upload_file2.name != "ans.txt":
-		st.write("エラー : ans.txt以外のファイルがアップロードされています")
+		st.write("エラー ans.txt以外のファイルがアップロードされています")
 		exit()
 
 	f = open("/app/educationapp/marking/input/txt_file/ans.txt", 'w', encoding="utf-8", newline='')
@@ -68,7 +68,7 @@ def decode_prob_c():
 	global upload_file3
 
 	if upload_file3.name != "prob.c":
-		st.write("エラー : prob.c以外のファイルがアップロードされています")
+		st.write("エラー prob.c以外のファイルがアップロードされています")
 		exit()
 
 	f = open("/app/educationapp/marking/prob.c", 'w', encoding="utf-8", newline='')
@@ -82,7 +82,7 @@ def decode_student_c():
 	global file1_list
 
 	if upload_file4.name != "student_c.zip":
-		st.write("エラー : student_c.zip以外のファイルがアップロードされています")
+		st.write("エラー student_c.zip以外のファイルがアップロードされています")
 		exit()
 
 	with zipfile.ZipFile(upload_file4, 'r') as inputFile:
@@ -96,11 +96,11 @@ def decode_student_c():
 		print(f_name)
 		
 		if out2.search(f_name) == None:
-			st.write("エラー : zipファイル中のファイルで検出 → 拡張子が「.c」ではないファイルがアップロードされています(student_c.zipファイル内のファイル拡張子を「.c」に変更してください)")
+			st.write("エラー zipファイル中のファイルで検出。拡張子が「.c」ではないファイルがアップロードされています(student_c.zipファイル内のファイル拡張子を「.c」に変更してください)")
 			exit()
 
 		if out1.search(f_name) == None:
-			st.write("エラー : zipファイル中のファイルで検出 → student_c.zip内のファイルを指定されたファイル名に変更してください")
+			st.write("エラー zipファイル中のファイルで検出。student_c.zip内のファイルを指定されたファイル名に変更してください")
 			exit()
 
 
@@ -110,7 +110,7 @@ def decode_student_txt():
 	global file2_list
 
 	if upload_file5.name != "student_txt.zip":
-		st.write("エラー : student_txt.zip以外のファイルがアップロードされています")
+		st.write("エラー student_txt.zip以外のファイルがアップロードされています")
 		exit()
 
 	with zipfile.ZipFile(upload_file5, 'r') as inputFile:
@@ -123,11 +123,11 @@ def decode_student_txt():
 	for f_name in file1_list:
 		
 		if out2.search(f_name) == None:
-			st.write("エラー : 拡張子が「.txt」ではないファイルがアップロードされています(student_txt.zipファイル内のファイル拡張子を「.txt」に変更してください)")
+			st.write("エラー 拡張子が「.txt」ではないファイルがアップロードされています(student_txt.zipファイル内のファイル拡張子を「.txt」に変更してください)")
 			exit()
 
 		if out1.search(f_name) == None:
-			st.write("エラー : student_txt.zip内のファイルを指定されたファイル名に変更してください")
+			st.write("エラー student_txt.zip内のファイルを指定されたファイル名に変更してください")
 			exit()
 
 
@@ -140,13 +140,13 @@ def check_student_num():
 	size2 = len(file2_list)
 
 	if size1+1 != size2:
-		st.write("エラー : student_c.zip と student_txt.zip 内のファイル数が一致しません")
+		st.write("エラー student_c.zip と student_txt.zip 内のファイル数が一致しません")
 		exit()
 
 	for i in range(size1):
 
 		if file1_list[i].replace(".c", '') != file2_list[i].replace(".txt", ''):
-			st.write("エラー : student_c.zip と student_txt.zip 内のファイル名が一致しない組があります")
+			st.write("エラー student_c.zip と student_txt.zip 内のファイル名が一致しない組があります")
 			exit()
 
 	file1_list.clear()
