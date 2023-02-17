@@ -573,9 +573,6 @@ def print_possibility(file_list):
 
 	size1 = len(file_list)
 	size2 = len(error_list)
-
-	print(file_list)
-	print(error_list)
 	
 	if size1 == 0:
 		return

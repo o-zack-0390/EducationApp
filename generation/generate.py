@@ -18,6 +18,7 @@ def generate(_path1, _path2, _path3, _path4):
     path4 = _path4
     
     read_file()
+    print_ans()
     generate_blank(bsg2_list, marker2)
     generate_blank(bsg_list , marker1)
     print_blank()
@@ -71,6 +72,19 @@ def read_file():
 	
 	bsg_list  = bsg_list[:int(len(bsg_list)/2)]
 	bsg2_list = bsg2_list[:int(len(bsg2_list)/2)+1]
+
+
+# 正解プログラムを表示
+def print_ans():
+	global code_list
+
+	sorce = ''
+
+	for line in code_list:
+		sorce += line
+
+	with st.expander("ソースコード"):
+		st.code(sorce)
 
 
 # 空欄を生成する
@@ -284,7 +298,7 @@ def print_code():
 	for line in code_list:
 		sorce += line
 
-	with st.expander("ソースコード"):
+	with st.expander("空欄補充問題"):
 		st.code(sorce)
 
 
