@@ -636,12 +636,10 @@ def generate_txt():
 		tmp_name = str(index) + ".txt"
 		os.rename(path + '/' + f_name, path + '/' + tmp_name)
 
-		for i in range(size):
-			if another_list[i] == f_name:
-				another_list[i]  = tmp_name
-				fp_list[i]       = tmp_name
+		if f_name in another_list:
+			another_list[another_list.index(f_name)] = tmp_name
+			index += 1
 
-		index += 1
 	index = 0
 
 	for f_name in fp_list:
@@ -652,12 +650,9 @@ def generate_txt():
 		os.rename(path + '/' + f_name, path + '/' + f.readline())
 		f.close()
 
-		for i in range(size):
-			if another_list[i] == f_name:
-				another_list[i]  = tmp_name
-				fp_list[i]       = tmp_name
-
-		index += 1
+		if f_name in another_list:
+			another_list[another_list.index(f_name)] = tmp_name
+			index += 1
 
 
 
