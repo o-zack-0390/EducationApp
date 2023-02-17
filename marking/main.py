@@ -16,6 +16,15 @@ class Language_Node:
 
 
 
+# ディレクトリを作成
+def create_dir():
+	os.mkdir("/app/educationapp/marking/input")
+	os.mkdir("/app/educationapp/marking/input/c_file")
+	os.mkdir("/app/educationapp/marking//input/txt_file")
+	os.mkdir("/app/educationapp/marking/output")
+
+
+
 # ans.c を byte型 → str型に変更
 def decode_ans_c():
 	global upload_file1
@@ -24,7 +33,7 @@ def decode_ans_c():
 		st.write("エラー\nans.c以外のファイルがアップロードされています")
 		exit()
 
-	f = open("ans.c", 'w', encoding="utf-8", newline='')
+	f = open("/app/educationapp/marking/ans.c", 'w', encoding="utf-8", newline='')
 	f.write(upload_file1.getvalue().decode('utf-8'))
 	f.close()
 
@@ -37,7 +46,7 @@ def decode_ans_txt():
 		st.write("エラー\nans.txt以外のファイルがアップロードされています")
 		exit()
 
-	f = open("./input/txt_file/ans.txt", 'w', encoding="utf-8", newline='')
+	f = open("/app/educationapp/marking/input/txt_file/ans.txt", 'w', encoding="utf-8", newline='')
 	f.write(upload_file2.getvalue().decode('utf-8'))
 	f.close()
 
@@ -49,7 +58,7 @@ def decode_prob_c():
 		st.write("エラー\nprob.c以外のファイルがアップロードされています")
 		exit()
 
-	f = open("prob.c", 'w', encoding="utf-8", newline='')
+	f = open("/app/educationapp/marking/prob.c", 'w', encoding="utf-8", newline='')
 	f.write(upload_file3.getvalue().decode('utf-8'))
 	f.close()
 
@@ -60,9 +69,9 @@ def decode_student_c():
 	global file1_list
 
 	with zipfile.ZipFile(upload_file4, 'r') as inputFile:
-		inputFile.extractall("./input/c_file")
+		inputFile.extractall("/app/educationapp/marking/input/c_file")
 
-	file1_list  = os.listdir("./input/c_file")
+	file1_list  = os.listdir("/app/educationapp/marking/input/c_file")
 	out1        = re.compile(r'^(100)')
 	out2        = re.compile(r'.c')
 
@@ -84,9 +93,9 @@ def decode_student_txt():
 	global file2_list
 
 	with zipfile.ZipFile(upload_file5, 'r') as inputFile:
-		inputFile.extractall("./input/txt_file")
+		inputFile.extractall("/app/educationapp/marking/input/txt_file")
 
-	file2_list = os.listdir("./input/txt_file")
+	file2_list = os.listdir("/app/educationapp/marking/input/txt_file")
 	out1       = re.compile(r'^(100)')
 	out2       = re.compile(r'.c')
 
@@ -128,7 +137,7 @@ def check_student_num():
 def read_ans(len_list):
 
 #	正解プログラムを読み込む
-	f     = open("ans.c", 'r', encoding = "utf-8")
+	f     = open("/app/educationapp/marking/ans.c", 'r', encoding = "utf-8")
 	line  = f.readline()
 	order = 1
 
@@ -621,20 +630,12 @@ def create_zip():
 # 不要なファイルを削除
 def remove_file():
 
-	c_file   = "./input/c_file"
-	txt_file = "./input/txt_file"
-	output   = "./output"
+	shutil.rmtree("/app/educationapp/marking/input/c_file")
+	shutil.rmtree("/app/educationapp/marking/input/txt_file")
+	shutil.rmtree("/app/educationapp/marking/output")
 
-	shutil.rmtree(c_file)
-	shutil.rmtree(txt_file)
-	shutil.rmtree(output)
-
-	os.mkdir(c_file)
-	os.mkdir(txt_file)
-	os.mkdir(output)
-
-	os.remove("ans.c")
-	os.remove("prob.c")
+	os.remove("/app/educationapp/marking/ans.c")
+	os.remove("/app/educationapp/marking/prob.c")
 
 
 
@@ -660,10 +661,10 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 		check_student_num()
 		
 #		参照ファイルのパス
-		path1 = "input/c_file"
-		path2 = "input/txt_file"
-		path3 = "prob.c"
-		path4 = "output"
+		path1 = "/app/educationapp/marking/input/c_file"
+		path2 = "/app/educationapp/marking/input/txt_file"
+		path3 = "/app/educationapp/marking/prob.c"
+		path4 = "/app/educationapp/marking/output"
 
 #		模範プログラムを保存する
 		len_list = []
@@ -698,7 +699,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 		another_list = []
 
 #		模範プログラムの実行結果を格納
-		ans_exe = execution_results("ans.c", txt_list, txt_size, path2)
+		ans_exe = execution_results("/app/educationapp/marking/ans.c", txt_list, txt_size, path2)
 
 
 #		cファイル数まで繰り返し
