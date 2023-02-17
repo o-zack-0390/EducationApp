@@ -679,6 +679,9 @@ def change_file():
 
        os.rename(tmp_path, path + '/' + f.readline())
        f.close()
+       
+    st.write(path + '/' + f.readline())
+    st.write(os.listdir(path))
 
 
 
