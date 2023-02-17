@@ -622,47 +622,6 @@ def total_miss(miss_list):
 	
 
 
-# 採点結果ファイルを作成
-def generate_txt():
-	global another_list
-
-	path    = "/app/educationapp/marking/input/c_file"
-	fp_list = os.listdir(path)
-	size    = len(fp_list)
-	index   = 0
-
-	for f_name in fp_list:
-
-		tmp_name = str(index) + ".txt"
-		os.rename(path + '/' + f_name, path + '/' + tmp_name)
-
-		if f_name in another_list:
-			pos               = another_list.index(f_name)
-			another_list[pos] = tmp_name
-			fp_list[pos]      = tmp_name
-			index            += 1
-
-	index = 0
-
-	st.write(another_list)
-	st.write(fp_list)
-
-	for f_name in fp_list:
-
-		tmp_name = str(index) + ".txt"
-		f        = open(path + '/' + f_name, 'r', encoding = "utf-8", newline = '')
-
-		os.rename(path + '/' + f_name, path + '/' + f.readline())
-		f.close()
-
-		if f_name in another_list:
-			pos               = another_list.index(f_name)
-			another_list[pos] = tmp_name
-			fp_list[pos]      = tmp_name
-			index            += 1
-
-
-
 # 別解の可能性があるファイルを表示する
 def print_possibility(file_list):
 	global error_list
@@ -803,7 +762,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 			eq = read_leaner(c_list[i], len_list, miss_list, correct_list, order, path1)
 			
 #			実行しているファイル名を表示
-			path = path4 + '/' + result_list[i]
+			path = path4 + '/' + result_list[i].replace(".c", ".txt")
 			f    = open(path, 'w', encoding="utf-8", newline='')
 			f.write(c_list[i])
 			f.close()
