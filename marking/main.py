@@ -142,13 +142,13 @@ def check_student_num():
 	global file1_list
 	global file2_list
 
-	file1_list = sorted(file1_list)
-	file2_list = sorted(file2_list)
-	size1      = len(file1_list)
-	size2      = len(file2_list)
+	file1_names = sorted(file1_list)
+	file2_names = sorted(file2_list)
+	size1       = len(file1_list)
+	size2       = len(file2_list)
 
-	st.write(file1_list)
-	st.write(file2_list)
+	st.write(file1_names)
+	st.write(file2_names)
 
 	if size1 != size2:
 		st.write("エラー student_c.zip と student_txt.zip 内のファイル数が一致しません")
@@ -156,7 +156,7 @@ def check_student_num():
 
 	for i in range(size1):
 
-		if file1_list[i].replace(".c", '') != file2_list[i].replace(".txt", ''):
+		if file1_names[i].replace(".c", '') != file2_names[i].replace(".txt", ''):
 			st.write("エラー student_c.zip と student_txt.zip 内のファイル名が一致しない組があります")
 			exit()
 
