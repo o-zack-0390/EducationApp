@@ -676,7 +676,7 @@ def print_file():
 
 		f.close()
 
-		f_list.append(l_list)
+		f_list.append(copy(l_list))
 		l_list.clear()
 
 	st.write(f_list)
