@@ -24,26 +24,26 @@ option = st.selectbox\
          ]
          )
 
-path1 = "result/tf-idf1.txt"
-path2 = "result/tf-idf2.txt"
-path3 = "result/generate_note.txt"
-path4 = "result/uid.txt"
+path1 = "./result/tf-idf1.txt"
+path2 = "./result/tf-idf2.txt"
+path3 = "./result/generate_note.txt"
+path4 = "./result/uid.txt"
 
 if st.button("空欄補充問題を生成"):
 
   write_tfidf.write_tfidf(path1, path2, path3, path4, option + "\n")
   sort_tfidf.sort_tfidf(path3)
 
-  path1 = "result/bsg1.txt"
-  path2 = "result/bsg2.txt"
-  path3 = "result/generate_note.txt"
+  path1 = "./result/bsg1.txt"
+  path2 = "./result/bsg2.txt"
+  path3 = "./result/generate_note.txt"
 
   bsg.bsg(path1, path2, path3)
 
-  path1 = "result/bsg1.txt"
-  path2 = "result/bsg2.txt"
-  path3 = "result/prob.c"
-  path4 = "data/" + option
+  path1 = "./result/bsg1.txt"
+  path2 = "./result/bsg2.txt"
+  path3 = "./result/prob.c"
+  path4 = "./data/" + option
 
   generate.generate(path4, path3, path1, path2)
 
