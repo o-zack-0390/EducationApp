@@ -189,7 +189,7 @@ def read_ans(len_list):
 def read_ans_exe():
 	global ans_exe
 
-	f     = open("ans.txt", 'r', encoding = "utf-8")
+	f     = open("/app/educationapp/marking/ans.txt", 'r', encoding = "utf-8")
 	line  = f.readline()
 
 	while line:
