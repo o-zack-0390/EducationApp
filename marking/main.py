@@ -664,10 +664,11 @@ def print_file():
 	files = os.listdir(path1)
 	f_list = []
 	l_list = []
+	index  = 0
 
 	for f_name in files:
 		
-		f    = open(path1 + '/' + f_name, 'r', encoding = "utf-8", newline='')
+		f    = open(path1 + '/' + f_name, 'r', encoding = "utf-8")
 		line = f.readline()
 
 		while line:
@@ -679,7 +680,17 @@ def print_file():
 		f_list.append(copy(l_list))
 		l_list.clear()
 
-	st.write(f_list)
+	f_size = len(f_list)
+	for i in range(f_size):
+
+		f      = open(path1 + '/' + f_list[i][0].replace(' ', ''), 'w', encoding = "utf-8", newline='')
+		l_size = len(f_list[i])
+
+		for j in range(l_size):
+			f.write(f_list[index][j])
+
+		index += 1
+		f.close()
 
 
 
