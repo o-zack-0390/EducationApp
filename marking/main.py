@@ -633,7 +633,7 @@ def generate_txt():
 
 	for f_name in fp_list:
 
-		tmp_name = index + ".txt"
+		tmp_name = str(index) + ".txt"
 		os.rename(path + '/' + f_name, path + '/' + tmp_name)
 
 		for i in range(size):
@@ -646,7 +646,7 @@ def generate_txt():
 
 	for f_name in fp_list:
 
-		tmp_name = index + ".txt"
+		tmp_name = str(index) + ".txt"
 		f        = open(path + '/' + f_name, 'r', encoding = "utf-8", newline = '')
 
 		os.rename(path + '/' + f_name, path + '/' + f.readline())
