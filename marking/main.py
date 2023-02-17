@@ -18,10 +18,23 @@ class Language_Node:
 
 # ディレクトリを作成
 def create_dir():
-	os.mkdir("/app/educationapp/marking/input")
-	os.mkdir("/app/educationapp/marking/input/c_file")
-	os.mkdir("/app/educationapp/marking//input/txt_file")
-	os.mkdir("/app/educationapp/marking/output")
+	
+	input    = "/app/educationapp/marking/input"
+	c_file   = "/app/educationapp/marking/input/c_file"
+	txt_file = "/app/educationapp/marking//input/txt_file"
+	output   = "/app/educationapp/marking/output"
+
+	if os.path.exists(input) == False:
+		os.mkdir(input)
+
+	if os.path.exists(c_file) == False:
+		os.mkdir(c_file)
+
+	if os.path.exists(txt_file) == False:
+		os.mkdir(txt_file)
+
+	if os.path.exists(output) == False:
+		os.mkdir(output)
 
 
 
@@ -126,7 +139,7 @@ def check_student_num():
 
 		print(file1_list)
 		print(file2_list)
-		
+
 		if file1_list[i].replace(".c", '') != file2_list[i].replace(".txt", ''):
 			st.write("student.c と student.txt のファイル名が一致しない組があります")
 			exit()
