@@ -819,6 +819,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 #		制約違反3に該当するファイルを表示する
 		print_error(error_list)
 
+		change_file()
 #		各空欄の配点と総合点数を定義する
 		def_score(path3, c_size)
 
