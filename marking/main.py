@@ -678,17 +678,12 @@ def print_file():
 		l_list.clear()
 
 	f_size = len(f_list)
-	for i in range(f_size):
 
-		path2  = path1 + '/' + f_list[i][0].replace(' ', '').replace(".c", ".txt")
-		f      = open(path2, 'w', encoding = "utf-8", newline='')
+	for i in range(f_size):
 		l_size = len(f_list[i])
 
-		st.write(path2)
 		for j in range(l_size):
-			f.write(f_list[i][j])
-
-		f.close()
+			st.write(f_list[i][j])
 
 
 
