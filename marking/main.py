@@ -657,12 +657,11 @@ def print_error(error_list):
 
 
 def print_file():
+	global f_list
+	global l_list
 
 	path1 = '/app/educationapp/marking/output'
 	files = os.listdir(path1)
-	f_list = []
-	l_list = []
-	index  = 0
 
 	for f_name in files:
 		
@@ -774,6 +773,8 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 		backup_miss_list = []
 		error_list       = []
 		bi_list          = []
+		f_list           = []
+		l_list           = []
 		sub_score_list   = None
 		total_score      = None
 
