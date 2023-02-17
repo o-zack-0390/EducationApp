@@ -674,7 +674,7 @@ def change_file():
 
     for i in range(index+1):
        
-       tmp_path = path + '/' + str(i)
+       tmp_path = path + '/' + str(i) + ".txt"
        f        = open(tmp_path, 'r', encoding = "utf-8", newline = '')
 
        os.rename(tmp_path, path + '/' + f.readline())
