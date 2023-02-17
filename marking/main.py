@@ -639,13 +639,15 @@ def print_possibility(file_list):
 				for j in range(size2):
 
 					if file_list[i].replace('.txt', '.c') != error_list[j]:
-						st.write(file_list[i].replace(".txt",'.c'))
+						f = open(file_list[i].replace("c_file", "txt_file").replace(".c", ".txt"), 'r', encoding = "utf-8", newline = '')
+						st.write(f.readline())
+						f.close()
 
 
 
 # 制約違反のファイルを表示する
 def print_error(error_list):
-	
+
 	size = len(error_list)
 	
 	if size == 0:
@@ -654,9 +656,7 @@ def print_error(error_list):
 	else:
 		with st.expander("制約違反のファイル一覧"):
 			for i in range(size):
-				f = open(error_list[i].replace("c_file", "txt_file").replace(".c", ".txt"), 'r', encoding = "utf-8", newline = '')
-				st.write(f.readline())
-				f.close()
+				st.write(error_list[i])
 
 
 
