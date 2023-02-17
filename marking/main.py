@@ -21,7 +21,7 @@ def create_dir():
 
 	input    = "/app/educationapp/marking/input"
 	c_file   = "/app/educationapp/marking/input/c_file"
-	txt_file = "/app/educationapp/marking//input/txt_file"
+	txt_file = "/app/educationapp/marking/input/txt_file"
 	output   = "/app/educationapp/marking/output"
 
 	if os.path.exists(input) == False:
@@ -136,6 +136,8 @@ def check_student_num():
 	global file1_list
 	global file2_list
 
+	file1_list = sorted(file1_list)
+	file2_list = sorted(file2_list)
 	size1      = len(file1_list)
 	size2      = len(file2_list)
 
