@@ -622,6 +622,45 @@ def total_miss(miss_list):
 	
 
 
+# 採点結果ファイルを作成
+def generate_txt():
+	global another_list
+
+	path    = "/app/educationapp/marking/input/c_file"
+	fp_list = os.listdir(path)
+	size    = len(fp_list)
+	index   = 0
+
+	for f_name in fp_list:
+
+		tmp_name = index + ".txt"
+		os.rename(path + '/' + f_name, path + '/' + tmp_name)
+
+		for i in range(size):
+			if another_list[i] == f_name:
+				another_list[i]  = tmp_name
+				fp_list[i]       = tmp_name
+
+		index += 1
+	index = 0
+
+	for f_name in fp_list:
+
+		tmp_name = index + ".txt"
+		f        = open(path + '/' + f_name, 'r', encoding = "utf-8", newline = '')
+
+		os.rename(path + '/' + f_name, path + '/' + f.readline())
+		f.close()
+
+		for i in range(size):
+			if another_list[i] == f_name:
+				another_list[i]  = tmp_name
+				fp_list[i]       = tmp_name
+
+		index += 1
+
+
+
 # 別解の可能性があるファイルを表示する
 def print_possibility(file_list):
 	global error_list
@@ -764,7 +803,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 #			実行しているファイル名を表示
 			path = path4 + '/' + result_list[i]
 			f    = open(path, 'w', encoding="utf-8", newline='')
-			f.write("ファイル名 : " + c_list[i])
+			f.write(c_list[i])
 			f.close()
 			
 #			両ソースコードの相違点を表示する
@@ -785,6 +824,9 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 
 			print("write : {}".format(path))
 
+
+#		採点結果ファイルを作成
+		generate_txt()
 
 #		別解の可能性があるファイルを表示する
 		print_possibility(another_list)
