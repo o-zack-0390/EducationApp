@@ -637,8 +637,10 @@ def generate_txt():
 		os.rename(path + '/' + f_name, path + '/' + tmp_name)
 
 		if f_name in another_list:
-			another_list[another_list.index(f_name)] = tmp_name
-			index += 1
+			pos               = another_list.index(f_name)
+			another_list[pos] = tmp_name
+			fp_list[pos]      = tmp_name
+			index            += 1
 
 	index = 0
 
@@ -651,8 +653,10 @@ def generate_txt():
 		f.close()
 
 		if f_name in another_list:
-			another_list[another_list.index(f_name)] = tmp_name
-			index += 1
+			pos               = another_list.index(f_name)
+			another_list[pos] = tmp_name
+			fp_list[pos]      = tmp_name
+			index            += 1
 
 
 
