@@ -5,7 +5,6 @@ import shutil
 import os
 import re
 import zipfile
-import add
 
 
 # pythonソースコードの属性
@@ -659,6 +658,30 @@ def print_error(error_list):
 
 
 
+def change_file():
+    
+    path  = "/app/educationapp/marking/output"
+    files = os.listdir(path)
+    files = [f for f in files if os.path.isfile(os.path.join(path, f))]
+    index = -1
+
+    for f_name in files:
+
+      index   += 1
+      tmp_path = path + '/' + str(index) + ".txt"
+
+      os.rename(path + '/' + f_name, tmp_path)
+
+    for i in range(index+1):
+       
+       tmp_path = path + '/' + str(i)
+       f        = open(tmp_path, 'r', encoding = "utf-8", newline = '')
+
+       os.rename(tmp_path, path + '/' + f.readline())
+       f.close()
+
+
+
 # zipファイルを作成
 def create_zip():
 
@@ -798,7 +821,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 #		学習者の点数を計算する
 		cal_score(path4)
 
-		add.change_file()
+		change_file()
 #		採点ファイルをzipファイルに圧縮
 		create_zip()
 
