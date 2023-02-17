@@ -147,7 +147,7 @@ def check_student_num():
 	size1      = len(file1_list)
 	size2      = len(file2_list)
 
-	if size1+1 != size2:
+	if size1 != size2:
 		st.write("エラー student_c.zip と student_txt.zip 内のファイル数が一致しません")
 		exit()
 
@@ -180,6 +180,20 @@ def read_ans(len_list):
 		
 	f.close()
 	return order
+
+
+
+def read_ans_exe():
+	global ans_exe
+
+	f     = open("ans.txt", 'r', encoding = "utf-8")
+	line  = f.readline()
+
+	while line:
+		ans_exe.append(line)
+		line = f.readline()
+
+	f.close()
 
 
 
@@ -729,8 +743,8 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 		another_list = []
 
 #		模範プログラムの実行結果を格納
-		ans_exe = execution_results("/app/educationapp/marking/ans.c", txt_list, txt_size, path2)
-
+		ans_exe = []
+		read_ans_exe()
 
 #		cファイル数まで繰り返し
 		for i in range(c_size):
