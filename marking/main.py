@@ -667,7 +667,7 @@ def print_file():
 
 	for f_name in files:
 		
-		f    = open(path + '/' + f_name, 'r', encoding = "utf-8", newline='')
+		f    = open(path1 + '/' + f_name, 'r', encoding = "utf-8", newline='')
 		line = f.readline()
 
 		while line:
