@@ -646,6 +646,7 @@ def print_possibility(file_list):
 # 制約違反のファイルを表示する
 def print_error(error_list):
 
+	path = "/app/educationapp/marking/input/txt_file/"
 	size = len(error_list)
 	
 	if size == 0:
@@ -654,7 +655,7 @@ def print_error(error_list):
 	else:
 		with st.expander("制約違反のファイル一覧"):
 			for i in range(size):
-				f = open(path1 + '/' + error_list[i].replace(".c", ".txt"), 'r', encoding = "utf-8", newline = '')
+				f = open(path + error_list[i].replace(".c", ".txt"), 'r', encoding = "utf-8", newline = '')
 				st.write(f.readline())
 				f.close()
 
