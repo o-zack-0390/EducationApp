@@ -174,34 +174,35 @@ def dif_code(ans_c, c_file, output, ans_sum_lines):
 	with open(c_file) as myfile:
 			c_file_sum_lines = sum(1 for line in myfile)
 
-	if ans_sum_lines != c_file_sum_lines:
-		output_f.write("制約違反のファイル")
-		return 
-
 	ans_f    = open(ans_c,  'r', encoding = "utf-8")
 	c_file_f = open(c_file, 'r', encoding = "utf-8")
 	output_f = open(output, 'w', encoding = "utf-8", newline = '')
 
-	ans_line    = ans_f.readline()
-	c_file_line = c_file_f.readline()
-	index       = 1
-	flag        = 0
-
-	output_f.write("コードの相違点\n\n")
-
-	while ans_line:
-
-		if ans_line != c_file_line:
-			output_f.write("{} : {}\n\n".format(index, ans_line))
-			output_f.write("{} : {}\n\n".format(index, c_file_line))
-			flag = 1
+	if ans_sum_lines != c_file_sum_lines:
+		output_f.write("制約違反のファイル")
+	
+	else:
 
 		ans_line    = ans_f.readline()
 		c_file_line = c_file_f.readline()
-		index      += 1
+		index       = 1
+		flag        = 0
 
-	if flag == 0:
-		output_f.write("相違点なし")
+		output_f.write("コードの相違点\n\n")
+
+		while ans_line:
+
+			if ans_line != c_file_line:
+				output_f.write("{} : {}\n\n".format(index, ans_line))
+				output_f.write("{} : {}\n\n".format(index, c_file_line))
+				flag = 1
+
+			ans_line    = ans_f.readline()
+			c_file_line = c_file_f.readline()
+			index      += 1
+
+		if flag == 0:
+			output_f.write("相違点なし")
 
 	ans_f.close()
 	c_file_f.close()
