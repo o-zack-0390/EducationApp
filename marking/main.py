@@ -179,7 +179,7 @@ def dif_code(ans_c, c_file, output, ans_sum_lines):
 	output_f = open(output, 'w', encoding = "utf-8", newline = '')
 
 	if ans_sum_lines != c_file_sum_lines:
-		output_f.write("制約違反のファイル")
+		output_f.write("制約違反のファイル\n\n")
 	
 	else:
 
@@ -277,7 +277,7 @@ def blank_mark(ans_c, prob_c, c_file):
 		ans_list.append(ans_line)
 		ans_line = ans_f.readline()
 
-	output_f.write("スコアレポート\n\n")
+	output_f.write("\n\nスコアレポート\n\n")
 
 	while prob_line:
 		prob_list.append(prob_line)
@@ -309,7 +309,7 @@ def blank_mark(ans_c, prob_c, c_file):
 		if ans_line != c_file_line:
 			
 #			パターン1 : 空欄の行が一致しない
-			if ("/* □ □ □ */" in prob_line) or ("/* ○ ○ ○ */" in prob_line):
+			if ("/*□□□*/" in prob_line) or ("/*○○○*/" in prob_line):
 				output_f.write("{} : ✕\n".format(index))
 
 #			パターン2 : 空欄以外の行が一致しない
@@ -320,7 +320,7 @@ def blank_mark(ans_c, prob_c, c_file):
 		else:
 
 #			空欄の行の場合
-			if ("/* □ □ □ */" in prob_line) or ("/* ○ ○ ○ */" in prob_line):
+			if ("/*□□□*/" in prob_line) or ("/*○○○*/" in prob_line):
 				output_f.write("{} : 〇\n".format(index))
 
 		index += 1
