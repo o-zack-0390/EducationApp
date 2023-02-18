@@ -474,3 +474,5 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 		print_error_ans(path3)
 
 		create_zip(path3)
+
+		remove_file()
