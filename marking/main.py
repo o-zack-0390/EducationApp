@@ -217,7 +217,7 @@ def dif_exe(ans_txt, txt_file, output):
 
 	ans_f         = open(ans_txt , 'r', encoding = "utf-8")
 	txt_file_f    = open(txt_file, 'r', encoding = "utf-8")
-	output_f      = open(output  , 'w', encoding = "utf-8", newline = '')
+	output_f      = open(output  , 'a', encoding = "utf-8", newline = '')
 
 	ans_line      = ans_f.readline()
 	txt_file_line = txt_file_f.readline()
