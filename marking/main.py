@@ -316,10 +316,16 @@ def blank_mark(ans_c, prob_c, c_file):
 			else:
 				output_f.write("{} : 制約違反の変更\n".format(index))
 
+#		模範プログラムとソースコードが一致する場合
 		else:
-			output_f.write("{} : 〇\n".format(index))
+
+#			空欄の行の場合
+			if ("/* □ □ □ */" in prob_line) or ("/* ○ ○ ○ */" in prob_line):
+				output_f.write("{} : 〇\n".format(index))
 
 		index += 1
+	
+	output_f.close()
 
 
 
