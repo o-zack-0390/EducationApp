@@ -7,15 +7,6 @@ import re
 import zipfile
 
 
-# pythonソースコードの属性
-class Language_Node:
-	
-	def _init_(self):
-		len   = None #ソースコード本文
-		order = None #ソースコードの行番号
-
-
-
 # ディレクトリを作成
 def create_dir():
 
