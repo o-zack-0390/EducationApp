@@ -258,7 +258,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 		
 
 		files = os.listdir(path1)
-		files = [f for f in files if os.path.isfile(os.path.join(path, f))]
+		files = [f for f in files if os.path.isfile(os.path.join(path1, f))]
 
 		for f_name in files:
 
