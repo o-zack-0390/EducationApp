@@ -202,7 +202,7 @@ def dif_code(ans_c, c_file, output, ans_sum_lines):
 			index      += 1
 
 		if flag == 0:
-			output_f.write("相違点なし")
+			output_f.write("相違点なし\n\n")
 
 	ans_f.close()
 	c_file_f.close()
@@ -222,7 +222,7 @@ def dif_exe(ans_txt, txt_file, output):
 	ans_line      = ans_f.readline()
 	txt_file_line = txt_file_f.readline()
 
-	output_f.write("\n\n模範解答\n\n")
+	output_f.write("模範解答\n\n")
 
 	while ans_line:
 
@@ -230,7 +230,7 @@ def dif_exe(ans_txt, txt_file, output):
 		ans_list.append(ans_line)
 		ans_line = ans_f.readline()
 
-	output_f.write("\n\n学習者の解答")
+	output_f.write("\n\n学習者の解答\n\n")
 
 	while txt_file_line:
 
@@ -256,6 +256,70 @@ def dif_exe(ans_txt, txt_file, output):
 	ans_f.close()
 	txt_file_f.close()
 
+
+
+def blank_mark(ans_c, prob_c, c_file):
+
+	ans_list    = []
+	prob_list   = []
+	c_file_list = []
+
+	ans_f       = open(ans_c , 'r', encoding = "utf-8")
+	prob_f      = open(prob_c, 'r', encoding = "utf-8")
+	c_file_f    = open(c_file, 'r', encoding = "utf-8")
+	output_f    = open(output, 'a', encoding = "utf-8", newline = '')
+
+	ans_line    = ans_f.readline()
+	prob_line   = prob_f.readline()
+	c_file_line = c_file_f.readline()
+
+	while ans_line:
+		ans_list.append(ans_line)
+		ans_line = ans_f.readline()
+
+	output_f.write("スコアレポート\n\n")
+
+	while prob_line:
+		prob_list.append(prob_line)
+		prob_line = prob_f.readline()
+
+	while c_file_line:
+		c_file_list.append(c_file_line)
+		c_file_line = c_file_list.readline()
+
+	ans_f.close()
+	prob_f.close()
+	c_file_f.close()
+
+	prob_size   = len(prob_list)
+	c_file_size = len(c_file_list)
+
+	if prob_size != c_file_size:
+		return
+		
+	index = 1
+		
+	for i in range(prob_size):
+
+		ans_line    = ans_list[i].replace(' ', '')
+		prob_line   = prob_list[i].replace(' ', '')
+		c_file_line = c_file_list[i].replace(' ', '')
+
+#		模範プログラムとソースコードが一致しない場合 → 2通りに場合分け
+		if ans_line != c_file_line:
+			
+#			パターン1 : 空欄の行が一致しない
+			if ("/* □ □ □ */" in prob_line) or ("/* ○ ○ ○ */" in prob_line):
+				output_f.write("{} : ✕\n".format(index))
+
+#			パターン2 : 空欄以外の行が一致しない
+			else:
+				output_f.write("{} : 制約違反の変更\n".format(index))
+
+		else:
+			output_f.write("{} : 〇\n".format(index))
+
+		index += 1
 
 
 
@@ -335,5 +399,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 			dif_code(ans_c, c_file, output, ans_sum_lines)
 
 			dif_exe(ans_txt, txt_file, output)
+
+			blank_mark(ans_c, prob_c, c_file)
 
 		create_zip(path3)
