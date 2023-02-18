@@ -167,7 +167,10 @@ def create_output_txt(file_path):
 
 
 
+# 相違点の記録
 def dif_code(ans_c, c_file, output, ans_sum_lines):
+	global wrong_files
+	global error_files
 
 	c_file_sum_lines = None
 
@@ -180,6 +183,7 @@ def dif_code(ans_c, c_file, output, ans_sum_lines):
 
 	if ans_sum_lines != c_file_sum_lines:
 		output_f.write("制約違反のファイル\n\n")
+		error_files.append(c_file)
 	
 	else:
 
@@ -204,13 +208,19 @@ def dif_code(ans_c, c_file, output, ans_sum_lines):
 		if flag == 0:
 			output_f.write("相違点なし\n\n")
 
+		else:
+			wrong_files.append(c_file)
+
 	ans_f.close()
 	c_file_f.close()
 	output_f.close()
 
 
 
+# 実行結果の記録
 def dif_exe(ans_txt, txt_file, output):
+	global wrong_files
+	global another_files
 
 	ans_list      = []
 	txt_file_list = []
@@ -253,8 +263,13 @@ def dif_exe(ans_txt, txt_file, output):
 
 	output_f.write("\n\n判定 : 一致")
 
+	if txt_file.replace("txt", "c") in wrong_files:
+		output_f.write(" (別解のファイル)")
+		another_files.append(txt_file.replace(".txt", ".c"))
+
 	ans_f.close()
 	txt_file_f.close()
+	output_f.close()
 
 
 
@@ -297,7 +312,10 @@ def blank_mark(ans_c, prob_c, c_file):
 	if prob_size != c_file_size:
 		return
 		
-	index = 1
+	index   = 1
+	count   = 0
+	correct = 0
+	flag    = 0
 		
 	for i in range(prob_size):
 
@@ -311,10 +329,12 @@ def blank_mark(ans_c, prob_c, c_file):
 #			パターン1 : 空欄の行が一致しない
 			if ("/*□□□*/" in prob_line) or ("/*○○○*/" in prob_line):
 				output_f.write("{} : ✕\n".format(index))
+				count += 1
 
 #			パターン2 : 空欄以外の行が一致しない
 			else:
 				output_f.write("{} : 制約違反の変更\n".format(index))
+				flag = 1
 
 #		模範プログラムとソースコードが一致する場合
 		else:
@@ -322,9 +342,15 @@ def blank_mark(ans_c, prob_c, c_file):
 #			空欄の行の場合
 			if ("/*□□□*/" in prob_line) or ("/*○○○*/" in prob_line):
 				output_f.write("{} : 〇\n".format(index))
+				count   += 1
+				correct += 1
 
 		index += 1
 	
+	if flag == 1:
+		error_files.append(c_file)
+
+	output_f.write("\nscore : {}点 ({}/{})".format(int((correct/count)*100), correct, count))
 	output_f.close()
 
 
@@ -391,8 +417,11 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 		with open(ans_c) as myfile:
 			ans_sum_lines = sum(1 for line in myfile)
 
-		files = os.listdir(path1)
-		files = [f for f in files if os.path.isfile(os.path.join(path1, f))]
+		files         = os.listdir(path1)
+		files         = [f for f in files if os.path.isfile(os.path.join(path1, f))]
+		wrong_files   = []
+		error_files   = []
+		another_files = []
 
 		for f_name in files:
 
