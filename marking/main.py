@@ -355,6 +355,38 @@ def blank_mark(ans_c, prob_c, c_file):
 
 
 
+# 別解のファイルを表示
+def print_another_ans(path3):
+	global another_files
+
+	f = open(path3 + '/' + "another_ans.txt", 'w', encoding = "utf-8", newline = '')
+
+	with st.expander("別解のファイル一覧"):
+
+		for another_file in another_files:
+			st.write(another_file.replace("txt", "c"))
+			f.write(another_file.replace("txt", "c"))
+
+	f.close()
+
+
+
+# 制約違反のファイルを表示
+def print_error_ans(path3):
+	global error_files
+
+	f = open(path3 + '/' + "error_ans.txt", 'w', encoding = "utf-8", newline = '')
+
+	with st.expander("制約違反のファイル一覧"):
+
+		for error_file in error_files:
+			st.write(error_file)
+			f.write(error_file)
+
+	f.close()
+
+
+
 # zipファイルを作成
 def create_zip(path3):
 
@@ -436,5 +468,9 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 			dif_exe(ans_txt, txt_file, output)
 
 			blank_mark(ans_c, prob_c, c_file)
+
+		print_another_ans(path3)
+
+		print_error_ans(path3)
 
 		create_zip(path3)
