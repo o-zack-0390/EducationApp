@@ -285,7 +285,7 @@ def blank_mark(ans_c, prob_c, c_file):
 
 	while c_file_line:
 		c_file_list.append(c_file_line)
-		c_file_line = c_file_line.readline()
+		c_file_line = c_file_f.readline()
 
 	ans_f.close()
 	prob_f.close()
