@@ -167,7 +167,16 @@ def create_output_txt(file_path):
 
 
 
-def dif_code(ans_c, c_file, output):
+def dif_code(ans_c, c_file, output, ans_sum_lines):
+
+	c_file_sum_lines = None
+
+	with open(c_file) as myfile:
+			c_file_sum_lines = sum(1 for line in myfile)
+
+	if ans_sum_lines != c_file_sum_lines:
+		output_f.write("制約違反のファイル")
+		return 
 
 	ans_f    = open(ans_c,  'r', encoding = "utf-8")
 	c_file_f = open(c_file, 'r', encoding = "utf-8")
@@ -248,14 +257,19 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 		decode_student_txt()
 		check_student_num()
 		
-		path1 = "/app/educationapp/marking/input/c_file"
-		path2 = "/app/educationapp/marking/input/txt_file"
-		path3 = "/app/educationapp/marking/output"
+		path1   = "/app/educationapp/marking/input/c_file"
+		path2   = "/app/educationapp/marking/input/txt_file"
+		path3   = "/app/educationapp/marking/output"
 
 		ans_c   = "/app/educationapp/marking/ans.c"
 		ans_txt = "/app/educationapp/marking/ans.txt"
 		prob_c  = "/app/educationapp/marking/prob.c"
 		
+		ans_sum_lines = None
+
+#		ans.cの行数を取得
+		with open(ans_c) as myfile:
+			ans_sum_lines = sum(1 for line in myfile)
 
 		files = os.listdir(path1)
 		files = [f for f in files if os.path.isfile(os.path.join(path1, f))]
@@ -268,6 +282,6 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 
 			create_output_txt(output)
 
-			dif_code(ans_c, c_file, output)
+			dif_code(ans_c, c_file, output, ans_sum_lines)
 
 		create_zip(path3)
