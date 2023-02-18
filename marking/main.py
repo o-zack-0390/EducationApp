@@ -210,6 +210,55 @@ def dif_code(ans_c, c_file, output, ans_sum_lines):
 
 
 
+def dif_exe(ans_txt, txt_file, output):
+
+	ans_list      = []
+	txt_file_list = []
+
+	ans_f         = open(ans_txt , 'r', encoding = "utf-8")
+	txt_file_f    = open(txt_file, 'r', encoding = "utf-8")
+	output_f      = open(output  , 'w', encoding = "utf-8", newline = '')
+
+	ans_line      = ans_f.readline()
+	txt_file_line = txt_file_f.readline()
+
+	output_f.write("\n\n模範解答\n\n")
+
+	while ans_line:
+
+		output_f.write(ans_line)
+		ans_list.append(ans_line)
+		ans_line = ans_f.readline()
+
+	output_f.write("\n\n学習者の解答")
+
+	while txt_file_line:
+
+		output_f.write(txt_file_line)
+		txt_file_list.append(txt_file_line)
+		txt_file_line = txt_file_f.readline()
+
+	ans_size = len(ans_list)
+	txt_size = len(txt_file_list)
+
+	if ans_size != txt_size:
+		output_f.write("\n\n判定 : 不一致")
+		return
+	
+	for i in range(ans_size):
+
+		if ans_list[i] != txt_file_list[i]:
+			output_f.write("\n\n判定 : 不一致")
+			return
+
+	output_f.write("\n\n判定 : 一致")
+
+	ans_f.close()
+	txt_file_f.close()
+
+
+
+
 # zipファイルを作成
 def create_zip(path3):
 
@@ -284,5 +333,7 @@ if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_fi
 			create_output_txt(output)
 
 			dif_code(ans_c, c_file, output, ans_sum_lines)
+
+			dif_exe(ans_txt, txt_file, output)
 
 		create_zip(path3)
