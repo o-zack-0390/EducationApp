@@ -6,6 +6,73 @@ import zipfile
 from sys import exit
 
 
+def saiten():
+	global upload_file1
+	global upload_file2
+	global upload_file3
+	global upload_file4
+	global upload_file5
+
+	upload_file1 = st.file_uploader('ans.c (提出ファイル数上限 : 1)'          , type = 'c'  )
+	upload_file2 = st.file_uploader('ans.txt (提出ファイル数上限 : 1)'        , type = 'txt')
+	upload_file3 = st.file_uploader('prob.c (提出ファイル数上限 : 1)'         , type = 'c'  )
+	upload_file4 = st.file_uploader('student_c.zip (提出ファイル数上限 : 1)'  , type = 'zip')
+	upload_file5 = st.file_uploader('student_txt.zip (提出ファイル数上限 : 1)', type = 'zip')
+
+
+	if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_file5:
+
+		if st.button("採点を開始"):
+
+			create_dir()
+			decode_ans_c()
+			decode_ans_txt()
+			decode_prob_c()
+			decode_student_c()
+			decode_student_txt()
+			check_student_num()
+			
+			path1   = "/app/educationapp/marking/input/c_file"
+			path2   = "/app/educationapp/marking/input/txt_file"
+			path3   = "/app/educationapp/marking/output"
+
+			ans_c   = "/app/educationapp/marking/ans.c"
+			ans_txt = "/app/educationapp/marking/ans.txt"
+			prob_c  = "/app/educationapp/marking/prob.c"
+			
+			ans_sum_lines = None
+
+#			ans.cの行数を取得
+			with open(ans_c) as myfile:
+				ans_sum_lines = sum(1 for line in myfile)
+
+			files         = os.listdir(path1)
+			files         = [f for f in files if os.path.isfile(os.path.join(path1, f))]
+
+			for f_name in files:
+
+				c_file   = path1 + '/' + f_name
+				txt_file = path2 + '/' + f_name.replace(".c", ".txt")
+				output   = path3 + '/' + f_name.replace(".c", ".txt")
+
+				create_output_txt(output)
+
+				dif_code(ans_c, c_file, output, ans_sum_lines)
+
+				dif_exe(ans_txt, txt_file, output)
+
+				blank_mark(ans_c, prob_c, c_file)
+
+			print_another_ans(path3)
+
+			print_error_ans(path3)
+
+			create_zip(path3)
+
+			remove_file()
+
+
+
 # ディレクトリを作成
 def create_dir():
 
@@ -402,72 +469,6 @@ def remove_file():
 	os.remove("/app/educationapp/marking/ans.c")
 	os.remove("/app/educationapp/marking/prob.c")
 
-
-
-def saiten():
-	global upload_file1
-	global upload_file2
-	global upload_file3
-	global upload_file4
-	global upload_file5
-
-	upload_file1 = st.file_uploader('ans.c (提出ファイル数上限 : 1)'          , type = 'c'  )
-	upload_file2 = st.file_uploader('ans.txt (提出ファイル数上限 : 1)'        , type = 'txt')
-	upload_file3 = st.file_uploader('prob.c (提出ファイル数上限 : 1)'         , type = 'c'  )
-	upload_file4 = st.file_uploader('student_c.zip (提出ファイル数上限 : 1)'  , type = 'zip')
-	upload_file5 = st.file_uploader('student_txt.zip (提出ファイル数上限 : 1)', type = 'zip')
-
-
-	if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_file5:
-
-		if st.button("採点を開始"):
-
-			create_dir()
-			decode_ans_c()
-			decode_ans_txt()
-			decode_prob_c()
-			decode_student_c()
-			decode_student_txt()
-			check_student_num()
-			
-			path1   = "/app/educationapp/marking/input/c_file"
-			path2   = "/app/educationapp/marking/input/txt_file"
-			path3   = "/app/educationapp/marking/output"
-
-			ans_c   = "/app/educationapp/marking/ans.c"
-			ans_txt = "/app/educationapp/marking/ans.txt"
-			prob_c  = "/app/educationapp/marking/prob.c"
-			
-			ans_sum_lines = None
-
-#			ans.cの行数を取得
-			with open(ans_c) as myfile:
-				ans_sum_lines = sum(1 for line in myfile)
-
-			files         = os.listdir(path1)
-			files         = [f for f in files if os.path.isfile(os.path.join(path1, f))]
-
-			for f_name in files:
-
-				c_file   = path1 + '/' + f_name
-				txt_file = path2 + '/' + f_name.replace(".c", ".txt")
-				output   = path3 + '/' + f_name.replace(".c", ".txt")
-
-				create_output_txt(output)
-
-				dif_code(ans_c, c_file, output, ans_sum_lines)
-
-				dif_exe(ans_txt, txt_file, output)
-
-				blank_mark(ans_c, prob_c, c_file)
-
-			print_another_ans(path3)
-
-			print_error_ans(path3)
-
-			create_zip(path3)
-
-			remove_file()
 
 
 upload_file1 = None
