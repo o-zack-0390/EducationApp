@@ -1,10 +1,9 @@
-from copy   import copy
-from sys    import exit
 import streamlit as st
 import shutil
 import os
 import re
 import zipfile
+from sys import exit
 
 
 # ディレクトリを作成
@@ -405,65 +404,66 @@ def remove_file():
 
 
 
-st.markdown("## 空欄補充問題採点アプリ")
+def saiten():
 
-upload_file1 = st.file_uploader('ans.c (提出ファイル数上限 : 1)'          , type = 'c'  )
-upload_file2 = st.file_uploader('ans.txt (提出ファイル数上限 : 1)'        , type = 'txt')
-upload_file3 = st.file_uploader('prob.c (提出ファイル数上限 : 1)'         , type = 'c'  )
-upload_file4 = st.file_uploader('student_c.zip (提出ファイル数上限 : 1)'  , type = 'zip')
-upload_file5 = st.file_uploader('student_txt.zip (提出ファイル数上限 : 1)', type = 'zip')
+	upload_file1 = st.file_uploader('ans.c (提出ファイル数上限 : 1)'          , type = 'c'  )
+	upload_file2 = st.file_uploader('ans.txt (提出ファイル数上限 : 1)'        , type = 'txt')
+	upload_file3 = st.file_uploader('prob.c (提出ファイル数上限 : 1)'         , type = 'c'  )
+	upload_file4 = st.file_uploader('student_c.zip (提出ファイル数上限 : 1)'  , type = 'zip')
+	upload_file5 = st.file_uploader('student_txt.zip (提出ファイル数上限 : 1)', type = 'zip')
 
 
-if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_file5:
+	if upload_file1 and upload_file2 and upload_file3 and upload_file4 and upload_file5:
 
-	if st.button("採点を開始"):
+		if st.button("採点を開始"):
 
-		create_dir()
-		decode_ans_c()
-		decode_ans_txt()
-		decode_prob_c()
-		decode_student_c()
-		decode_student_txt()
-		check_student_num()
-		
-		path1   = "/app/educationapp/marking/input/c_file"
-		path2   = "/app/educationapp/marking/input/txt_file"
-		path3   = "/app/educationapp/marking/output"
+			create_dir()
+			decode_ans_c()
+			decode_ans_txt()
+			decode_prob_c()
+			decode_student_c()
+			decode_student_txt()
+			check_student_num()
+			
+			path1   = "/app/educationapp/marking/input/c_file"
+			path2   = "/app/educationapp/marking/input/txt_file"
+			path3   = "/app/educationapp/marking/output"
 
-		ans_c   = "/app/educationapp/marking/ans.c"
-		ans_txt = "/app/educationapp/marking/ans.txt"
-		prob_c  = "/app/educationapp/marking/prob.c"
-		
-		ans_sum_lines = None
+			ans_c   = "/app/educationapp/marking/ans.c"
+			ans_txt = "/app/educationapp/marking/ans.txt"
+			prob_c  = "/app/educationapp/marking/prob.c"
+			
+			ans_sum_lines = None
 
-#		ans.cの行数を取得
-		with open(ans_c) as myfile:
-			ans_sum_lines = sum(1 for line in myfile)
+#			ans.cの行数を取得
+			with open(ans_c) as myfile:
+				ans_sum_lines = sum(1 for line in myfile)
 
-		files         = os.listdir(path1)
-		files         = [f for f in files if os.path.isfile(os.path.join(path1, f))]
-		wrong_files   = []
-		error_files   = []
-		another_files = []
+			files         = os.listdir(path1)
+			files         = [f for f in files if os.path.isfile(os.path.join(path1, f))]
 
-		for f_name in files:
+			for f_name in files:
 
-			c_file   = path1 + '/' + f_name
-			txt_file = path2 + '/' + f_name.replace(".c", ".txt")
-			output   = path3 + '/' + f_name.replace(".c", ".txt")
+				c_file   = path1 + '/' + f_name
+				txt_file = path2 + '/' + f_name.replace(".c", ".txt")
+				output   = path3 + '/' + f_name.replace(".c", ".txt")
 
-			create_output_txt(output)
+				create_output_txt(output)
 
-			dif_code(ans_c, c_file, output, ans_sum_lines)
+				dif_code(ans_c, c_file, output, ans_sum_lines)
 
-			dif_exe(ans_txt, txt_file, output)
+				dif_exe(ans_txt, txt_file, output)
 
-			blank_mark(ans_c, prob_c, c_file)
+				blank_mark(ans_c, prob_c, c_file)
 
-		print_another_ans(path3)
+			print_another_ans(path3)
 
-		print_error_ans(path3)
+			print_error_ans(path3)
 
-		create_zip(path3)
+			create_zip(path3)
 
-		remove_file()
+			remove_file()
+
+wrong_files   = []
+error_files   = []
+another_files = []
