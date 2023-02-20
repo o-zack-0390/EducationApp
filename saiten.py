@@ -405,6 +405,11 @@ def remove_file():
 
 
 def saiten():
+	global upload_file1
+	global upload_file2
+	global upload_file3
+	global upload_file4
+	global upload_file5
 
 	upload_file1 = st.file_uploader('ans.c (提出ファイル数上限 : 1)'          , type = 'c'  )
 	upload_file2 = st.file_uploader('ans.txt (提出ファイル数上限 : 1)'        , type = 'txt')
@@ -463,6 +468,13 @@ def saiten():
 			create_zip(path3)
 
 			remove_file()
+
+
+upload_file1 = None
+upload_file2 = None
+upload_file3 = None
+upload_file4 = None
+upload_file5 = None
 
 wrong_files   = []
 error_files   = []
