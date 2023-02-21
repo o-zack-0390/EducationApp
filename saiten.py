@@ -61,7 +61,7 @@ def saiten():
 
 				dif_exe(ans_txt, txt_file, output)
 
-				blank_mark(ans_c, prob_c, c_file)
+				blank_mark(ans_c, prob_c, c_file, output)
 
 			print_another_ans(path3)
 
@@ -330,7 +330,7 @@ def dif_exe(ans_txt, txt_file, output):
 
 
 
-def blank_mark(ans_c, prob_c, c_file):
+def blank_mark(ans_c, prob_c, c_file, output):
 
 	ans_list    = []
 	prob_list   = []
