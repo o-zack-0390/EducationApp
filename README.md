@@ -18,7 +18,7 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 <li>正解プログラムの実行結果</li>
 <li>空欄補充問題</li>
 <li>解答者のプログラム</li>
-<li>解答者のプログラムの実行結果</li>
+<li>解答者のプログラムの実行結果</li><br>
 <a href="https://github.com/o-zack-0390/EducationApp/tree/main/input_data">サンプルファイル</a><br><br>
 2. 「採点を開始」を押すと採点する<br><br>
 
