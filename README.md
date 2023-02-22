@@ -29,5 +29,5 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 <br><br>
 
 <h3>開発背景</h3>
-プログラミング演習問題の作成・採点にかなりの労力が掛かっていることから研究テーマにした。<br><br>
+プログラミング演習問題の作成・採点にかなりの労力が掛かっていることから開発に至った。<br><br>
 <img width="878" alt="image" src="https://user-images.githubusercontent.com/116938721/220624407-2d577489-02d9-49bf-b14f-818537d6f2ab.png">
