@@ -21,7 +21,8 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 <li>解答者のプログラムの実行結果</li><br>
 <a href="https://github.com/o-zack-0390/EducationApp/tree/main/input_data">提出ファイルのサンプル</a><br><br>
 2. 「採点を開始」を押すと採点する<br><br>
+<a href="https://github.com/o-zack-0390/EducationApp/blob/main/marking/student.zip">ダウンロードファイルのサンプル</a>
+
 
 <img width="973" alt="image" src="https://user-images.githubusercontent.com/116938721/220614740-32102181-a0e2-4d10-b178-88a65a7c7d0f.png">
 <img width="970" alt="image" src="https://user-images.githubusercontent.com/116938721/220614892-76c2119f-4a3f-41e0-9694-ee993d14e4c4.png">
-<a href="https://github.com/o-zack-0390/EducationApp/blob/main/marking/student.zip">ダウンロードファイルのサンプル</a>
