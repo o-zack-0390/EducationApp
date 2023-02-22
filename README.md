@@ -7,7 +7,7 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 <h3>使用方法(生成)</h3>
 1. 実行形式「生成」を選択<br>
 2. 空欄対象プログラムを選択<br>
-3. 「空欄補充問題を生成」を押す<br>
+3. 「空欄補充問題を生成」を押す<br><br>
 
 <img width="970" alt="image" src="https://user-images.githubusercontent.com/116938721/220613575-9828ac87-5e4b-4675-afa1-9fd842efc5f3.png">
 <br><br>
