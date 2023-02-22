@@ -1,5 +1,5 @@
 # 空欄補充型プログラミング演習問題アプリ
-
+URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空欄補充型プログラミング演習問題アプリ</a>
 プログラミング演習問題の一つである「空欄補充問題」を自動生成・自動採点するアプリ<br><br>
 
 <img width="983" alt="image" src="https://user-images.githubusercontent.com/116938721/220613703-78d8cb58-28d0-4f75-a9e6-9e73892039aa.png">
@@ -19,7 +19,7 @@
 <li>空欄補充問題</li>
 <li>解答者のプログラム</li>
 <li>解答者のプログラムの実行結果</li>
-<a href="https://github.com/o-zack-0390/EducationApp/tree/main/input_data">サンプルファイル</a><br>
+・<a href="https://github.com/o-zack-0390/EducationApp/tree/main/input_data">サンプルファイル</a><br><br>
 2. 「採点を開始」を押すと採点する<br><br>
 
 <img width="973" alt="image" src="https://user-images.githubusercontent.com/116938721/220614740-32102181-a0e2-4d10-b178-88a65a7c7d0f.png">
