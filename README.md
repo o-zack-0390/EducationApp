@@ -10,7 +10,6 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 3. 「空欄補充問題を生成」を押す<br><br>
 
 <img width="970" alt="image" src="https://user-images.githubusercontent.com/116938721/220613575-9828ac87-5e4b-4675-afa1-9fd842efc5f3.png">
-<br><br>
 
 <h3>使用方法(採点)</h3>
 1. 以下の5種類を提出
