@@ -33,7 +33,7 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 <img width="878" alt="image" src="https://user-images.githubusercontent.com/116938721/220624407-2d577489-02d9-49bf-b14f-818537d6f2ab.png">
 <br><br>
 
-<h3>先行研究</h3>
+<h3>参考研究</h3>
 [1] 蜂巣 吉成, 吉田 敦, 阿草 清滋 : プログラムの誤り修正課題および正誤判定プログラムの自動生成<br>
 [2] 柏原 昭博, 久米井 邦貴, 梅野 浩司,豊田 順一 : プログラム空欄補充問題の作成とその評価<br>
 [3] 小林 勇揮, 水野 修 : N-gram IDF を利用したソースコード内の特徴的部分抽出手法
