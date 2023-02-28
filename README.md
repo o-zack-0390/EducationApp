@@ -1,5 +1,8 @@
 # 空欄補充型プログラミング演習問題アプリ
-URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空欄補充型プログラミング演習問題アプリ</a><br><br>
+URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空欄補充型プログラミング演習問題アプリ</a><br>
+「😴」が表示されてる場合は「Yes, get this app back up!」を押して起動してください。
+
+<h3>概要</h3>
 プログラミング演習問題の一つである「空欄補充問題」を自動生成・自動採点するアプリ<br><br>
 
 <img width="983" alt="image" src="https://user-images.githubusercontent.com/116938721/220613703-78d8cb58-28d0-4f75-a9e6-9e73892039aa.png">
