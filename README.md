@@ -12,7 +12,7 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 2. 空欄対象プログラムを選択<br>
 3. 「空欄補充問題を生成」を押す<br>
 4. 「ファイルをダウンロード」を押すと空欄補充問題(prob.c)がダウンロードされる<br>
-<a href="https://github.com/o-zack-0390/education/blob/main/sample/7-%E6%A7%8B%E9%80%A0%E4%BD%93/prob.c">サンプル:prob.c</a><br><br>
+<a href="https://github.com/o-zack-0390/education/blob/main/sample/7-%E6%A7%8B%E9%80%A0%E4%BD%93/prob.c">サンプル : prob.c</a><br><br>
 
 <img width="941" alt="image" src="https://user-images.githubusercontent.com/116938721/223309208-61c707ff-a122-4d31-aae7-e8e59d560f0a.png">
 
@@ -22,7 +22,7 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 <li>正解プログラムの実行結果</li>
 <li>空欄補充問題</li>
 <li>解答者のプログラム</li>
-<li>解答者のプログラムの実行結果</li><br>
+<li>解答者のプログラムの実行結果</li>
 <a href="https://github.com/o-zack-0390/EducationApp/tree/main/input_data">提出ファイルのサンプル</a><br><br>
 2. 「採点を開始」を押すと採点する<br>
 <a href="https://github.com/o-zack-0390/EducationApp/blob/main/marking/student.zip">ダウンロードファイルのサンプル</a>
