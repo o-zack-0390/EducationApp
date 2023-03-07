@@ -14,7 +14,7 @@ python3<br><br>
 Streamlit<br><br>
 
 <h3>アーキテクチャ</h3>
-<img width="982" alt="image" src="https://user-images.githubusercontent.com/116938721/223316236-61009f48-debf-4034-9bf5-08f955130d56.png">
+<img width="912" alt="image" src="https://user-images.githubusercontent.com/116938721/223317062-7e392242-d1c8-4b44-b844-8507332dc51f.png">
 <br><br>
 
 <h3>使用方法(生成)</h3>
