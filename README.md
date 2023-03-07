@@ -30,7 +30,7 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">ç©ºæ
 <br><br>
 
 
-<img width="875" alt="image" src="https://user-images.githubusercontent.com/116938721/223309311-3d5e6614-e488-4c39-b5db-c9a357467b25.png">
+<img width="929" alt="image" src="https://user-images.githubusercontent.com/116938721/223310411-0260d4ec-2a03-4874-9aa2-8f978e1c150c.png">
 <img width="920" alt="image" src="https://user-images.githubusercontent.com/116938721/223309392-365e032d-9a0a-46e3-a3f4-66297c51532b.png">
 <br><br>
 
