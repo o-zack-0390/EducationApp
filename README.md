@@ -36,7 +36,7 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 
 <h3>開発背景</h3>
 大学ではプログラミング演習の授業があるが、プログラミング演習問題の作成・採点にかなりの労力が掛かっていることから開発に至った。<br><br>
-<img width="878" alt="image" src="https://user-images.githubusercontent.com/116938721/220624407-2d577489-02d9-49bf-b14f-818537d6f2ab.png">
+<img width="944" alt="image" src="https://user-images.githubusercontent.com/116938721/223310622-7ed3d94b-b2c2-4fdb-9cfb-0532e0819d5a.png">
 <br><br>
 
 <h3>参考研究</h3>
