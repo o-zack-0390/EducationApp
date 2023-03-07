@@ -10,7 +10,7 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 <h3>使用方法(生成)</h3>
 1. 実行形式「生成」を選択<br>
 2. 空欄対象プログラムを選択<br>
-3. 「空欄補充問題を生成」を押す<br><br>
+3. 「空欄補充問題を生成」を押す<br>
 4. 「ファイルをダウンロード」を押すと空欄補充問題(prob.c)がダウンロードされる<br><br>
 <a href="https://github.com/o-zack-0390/education/blob/main/sample/7-%E6%A7%8B%E9%80%A0%E4%BD%93/prob.c">サンプル:prob.c</a><br><br>
 
