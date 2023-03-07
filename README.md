@@ -24,7 +24,8 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 <li>解答者のプログラム</li>
 <li>解答者のプログラムの実行結果</li>
 <a href="https://github.com/o-zack-0390/EducationApp/tree/main/input_data">提出ファイルのサンプル</a><br><br>
-2. 「採点を開始」を押すと採点する<br>
+2. 「採点を開始」を押すと採点する<br><br>
+3. 「ファイルをダウンロード」を押すと採点結果がダウンロードされる<br>
 <a href="https://github.com/o-zack-0390/EducationApp/blob/main/marking/student.zip">ダウンロードファイルのサンプル</a>
 <br><br>
 
