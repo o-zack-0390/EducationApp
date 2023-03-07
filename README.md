@@ -7,6 +7,12 @@ URL : <a href="https://o-zack-0390-educationapp-main-li79gb.streamlit.app/">空�
 
 <img width="947" alt="image" src="https://user-images.githubusercontent.com/116938721/223309010-fae01554-00fd-46ad-ade9-1db9d122d63d.png">
 
+<h3>開発言語</h3>
+python3<br><br>
+
+<h3>フレームワーク</h3>
+Streamlit<br><br>
+
 <h3>使用方法(生成)</h3>
 1. 実行形式「生成」を選択<br>
 2. 空欄対象プログラムを選択<br>
